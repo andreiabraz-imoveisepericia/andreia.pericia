@@ -104,6 +104,11 @@
       max-width: 250px;
       border-radius: 10px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .livro img:hover {
+      transform: scale(1.05);
     }
     .livro div {
       max-width: 500px;
@@ -118,44 +123,20 @@
       margin-top: 40px;
     }
 
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background: #25D366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-      text-decoration: none;
-      z-index: 1000;
-    }
-    .whatsapp-float:hover {
-      background: #1ebe5d;
-    }
-
     .social {
       margin-top: 20px;
     }
     .social a {
-      margin: 0 12px;
+      margin: 0 8px;
       display: inline-block;
-      width: 40px;
-      height: 40px;
     }
-    .social svg {
-      width: 40px;
-      height: 40px;
-      fill: #7fc77f;
+    .social img {
+      width: 24px;
+      height: 24px;
       transition: 0.3s;
     }
-    .social svg:hover {
-      fill: #fff;
+    .social img:hover {
+      filter: brightness(1.5);
     }
 
     @media (max-width: 768px) {
@@ -225,10 +206,13 @@
       <li>✔ Atendimento profissional, com total discrição, sigilo e transparência</li>
     </ul>
   </section>
- <section>
+
+  <section id="livro">
     <h2>Meu Livro</h2>
     <div class="livro">
-      <img src="capa-livro.jpg" alt="Capa do Livro A Leveza da Transformação">
+      <a href="https://a.co/d/d9T3hVB" target="_blank">
+        <img src="capa-livro.jpg" alt="Capa do Livro A Leveza da Transformação">
+      </a>
       <div>
         <h3>A Leveza da Transformação</h3>
         <p>
@@ -236,13 +220,14 @@
           O autocuidado e o amor são forças transformadoras capazes de mudar a vida em todas as dimensões.  
         </p>
         <p><em>"Esse livro pode mudar a sua vida!"</em></p>
+        <p><a href="https://a.co/d/d9T3hVB" target="_blank" style="color:#7fc77f;font-weight:bold;">👉 Comprar na Amazon</a></p>
       </div>
     </div>
   </section>
 
-  <footer>
+  <footer id="contato">
     <h2>Contato</h2>
-    <div class="icons">
+    <div class="social">
       <a href="https://wa.me/5548988666778" target="_blank">
         <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
       </a>
@@ -252,8 +237,13 @@
       <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">
         <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="E-mail">
       </a>
+      <a href="https://www.linkedin.com/in/andr%C3%A9ia-br%C3%A1z-9b809b6a/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </a>
     </div>
+    <p style="margin-top:10px;font-size:14px;">© 2025 - Andreia Maria Bráz</p>
   </footer>
+
 </body>
 </html>
- 
+
