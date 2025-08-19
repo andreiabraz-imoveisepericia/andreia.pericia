@@ -1,124 +1,338 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andréia Braz - Perita Judicial Imobiliária</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Andreia Maria Braz - Perita Judicial</title>
+  <meta name="description" content="Perita Judicial Imobiliária aprovada no TJ-SC e AJG-SC. Avaliações, perícias e prospecção de áreas estratégicas com rigor técnico e sigilo.">
+  <meta name="keywords" content="Perícia Judicial, Avaliação Imobiliária, CNAI, CRECI, TJ-SC, AJG-SC, áreas e glebas, logística, laudos, Santa Catarina">
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header { background: #2c3e50; color: white; padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
-    header nav { display: flex; justify-content: center; gap: 20px; }
-    header nav a { color: white; text-decoration: none; font-weight: bold; }
-    section { padding: 80px 20px; max-width: 1100px; margin: auto; }
-    h2 { color: #2c3e50; text-align: center; margin-bottom: 30px; }
-    .sobre { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; }
-    .sobre img { max-width: 280px; border-radius: 50%; }
-    .servicos, .imoveis { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-    .card { border: 1px solid #ddd; border-radius: 10px; padding: 20px; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; }
-    .card img { width: 100%; border-radius: 10px; }
-    .card button { margin-top: 10px; padding: 10px 15px; border: none; background: #2c3e50; color: white; border-radius: 5px; cursor: pointer; }
-    .contato { text-align: center; }
-    .contato a { margin: 0 10px; font-size: 30px; text-decoration: none; color: #2c3e50; }
-    footer { text-align: center; padding: 15px; background: #2c3e50; color: white; margin-top: 30px; }
-    /* Botão flutuante WhatsApp */
-    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
-    .whatsapp-float img { width: 60px; height: 60px; }
+    :root{
+      --bg:#223a5e;        /* fundo geral */
+      --card:#2f4a73;      /* blocos */
+      --ink:#f4f6f9;       /* texto claro */
+      --nav:#1b2a44;       /* topo/rodapé */
+      --acc:#7fc77f;       /* destaque */
+      --ink-soft:#cfd6e4;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0; font-family:Arial, sans-serif; background-color:var(--bg);
+      color:var(--ink); line-height:1.6; scroll-behavior:smooth;
+    }
+    /* NAV */
+    nav{
+      position:fixed; top:0; left:0; width:100%; background:var(--nav); color:#fff;
+      display:flex; justify-content:center; gap:26px; padding:14px 10px; z-index:1000; flex-wrap:wrap;
+    }
+    nav a{ color:var(--acc); text-decoration:none; font-weight:bold }
+    nav a:hover{ text-decoration:underline }
+
+    /* HEADER */
+    header{
+      text-align:center; padding:120px 20px 50px; background:var(--bg);
+    }
+    header img{ max-width:260px; border-radius:12px; margin-bottom:18px }
+    header h1{ margin:10px 0 5px }
+    header p.subinfo{ font-style:italic; color:#ccc; margin-top:8px }
+
+    /* SECTIONS */
+    section{
+      padding:60px 20px; max-width:1100px; margin:40px auto; background:var(--card);
+      border-radius:12px; box-shadow:0 2px 8px rgba(0,0,0,.3); text-align:center;
+    }
+    h2{ color:var(--acc); margin-bottom:18px }
+
+    .wrap{ max-width:950px; margin-inline:auto; text-align:left }
+    .lead{ color:var(--ink-soft) }
+
+    /* GRID */
+    .services{ display:flex; flex-wrap:wrap; justify-content:center; gap:20px }
+    .card{
+      background:#1c2f4d; color:#fff; padding:20px; border-radius:10px; flex:1 1 260px;
+      box-shadow:0 2px 6px rgba(0,0,0,.3); text-align:left;
+    }
+    ul{ list-style:none; padding:0; margin:0 }
+    ul li{ margin:8px 0 }
+
+    /* Livro */
+    .livro{ display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:30px }
+    .livro img{
+      max-width:250px; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,.2); cursor:pointer; transition:.3s;
+    }
+    .livro img:hover{ transform:scale(1.05) }
+    .livro .txt{ max-width:520px; text-align:left }
+
+    /* Sobre (foto + texto) */
+    .sobre-flex{ display:flex; flex-wrap:wrap; align-items:center; gap:24px; justify-content:center }
+    .sobre-flex img{ width:260px; max-width:100%; border-radius:12px; box-shadow:0 3px 10px rgba(0,0,0,.25) }
+    .sobre-flex .txt{ max-width:620px; text-align:left }
+
+    /* Imóveis - cards responsivos */
+    .grid{
+      display:grid; gap:20px;
+      grid-template-columns: repeat(3, minmax(0,1fr));
+    }
+    .imovel{
+      background:#1c2f4d; border-radius:12px; overflow:hidden; box-shadow:0 2px 8px rgba(0,0,0,.3);
+    }
+    .imovel img{ width:100%; height:200px; object-fit:cover; display:block }
+    .imovel .box{ padding:16px }
+    .btn{
+      display:inline-block; padding:10px 16px; border-radius:8px; background:var(--acc);
+      color:#063; font-weight:bold; text-decoration:none;
+    }
+    .btn:hover{ filter:brightness(1.05) }
+
+    /* Footer + social icons */
+    footer{ background:var(--nav); color:#ccc; padding:24px; text-align:center; margin-top:40px }
+    .social{ margin-top:14px }
+    .social a{ margin:0 8px; display:inline-block }
+    .social img{ width:24px; height:24px; transition:.3s }
+    .social img:hover{ filter:brightness(1.5) }
+
+    /* Float buttons */
+    .whatsapp-float{
+      position:fixed; bottom:20px; right:20px; background:#25D366; color:white;
+      border-radius:50%; width:60px; height:60px; display:flex; align-items:center; justify-content:center;
+      font-size:28px; box-shadow:0 2px 6px rgba(0,0,0,.3); text-decoration:none; z-index:1001;
+    }
+    .whatsapp-float:hover{ background:#1ebe5d }
+
+    .imoveis-float{
+      position:fixed; bottom:90px; right:20px; background:var(--acc); color:#043; border-radius:999px;
+      padding:10px 16px; font-weight:bold; text-decoration:none; box-shadow:0 2px 6px rgba(0,0,0,.3); z-index:1001;
+    }
+    .imoveis-float:hover{ filter:brightness(1.05) }
+
+    /* RESPONSIVO */
+    @media (max-width: 900px){
+      .grid{ grid-template-columns: 1fr 1fr }
+    }
+    @media (max-width: 640px){
+      nav{ gap:14px }
+      .grid{ grid-template-columns: 1fr }
+    }
   </style>
 </head>
 <body>
 
+  <!-- NAV -->
+  <nav>
+    <a href="#sobre">Sobre mim</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#avaliacao">Avaliação</a>
+    <a href="#imoveis">Imóveis</a>
+    <a href="#livro">Meu Livro</a>
+    <a href="#areas">Prospecção</a>
+    <a href="#contato">Contato</a>
+  </nav>
+
+  <!-- HEADER -->
   <header>
-    <nav>
-      <a href="#sobre">Sobre Mim</a>
-      <a href="#servicos">Serviços</a>
-      <a href="#imoveis">Imóveis</a>
-      <a href="#livro">Livro</a>
-      <a href="#depoimentos">Depoimentos</a>
-      <a href="#contato">Contato</a>
-    </nav>
+    <img src="1.png" alt="Logo / Foto Andreia Maria Braz">
+    <h1>Andreia Maria Braz</h1>
+    <p>Avaliação Imobiliária · Perita Judicial · Corretora de Imóveis</p>
+    <p class="subinfo">Aprovada nos Tribunais TJ-SC e AJG-SC</p>
   </header>
 
+  <!-- SOBRE -->
   <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <div class="sobre">
-      <img src="IMG-20240911-WA0055.jpg" alt="Andréia Maria Braz">
-      <div>
-        <p>Sou <strong>Andréia Maria Braz</strong>, Perita Judicial Imobiliária com aprovação junto ao <strong>TJ-SC</strong> e <strong>AJG-SC</strong>. 
-        Atuo com experiência em perícias e avaliações de imóveis, oferecendo laudos técnicos com precisão e responsabilidade.</p>
+    <h2>Sobre mim</h2>
+    <div class="sobre-flex">
+      <img src="IMG-20240911-WA0055.jpg" alt="Foto profissional de Andreia Maria Braz">
+      <div class="txt">
+        <p>Sou Perita Judicial Imobiliária com experiência em avaliações para processos judiciais e assistências técnicas.
+        Atuo em Santa Catarina com responsabilidade, clareza e fundamentação jurídica. Registro no CRECI (PF/PJ) e CNAI, com formação reconhecida
+        pelo IBREP, BETA e COFECI. Aplico métodos avaliativos simples e complexos conforme as normas técnicas.</p>
       </div>
     </div>
   </section>
 
+  <!-- SERVIÇOS -->
   <section id="servicos">
     <h2>Serviços</h2>
-    <div class="servicos">
-      <div class="card"><h3>Avaliação Imobiliária</h3><p>Laudos completos para ações judiciais e negociações seguras.</p></div>
-      <div class="card"><h3>Perícia Judicial</h3><p>Atuação em processos judiciais com imparcialidade técnica.</p></div>
-      <div class="card"><h3>Consultoria</h3><p>Orientação para advogados, incorporadoras e particulares.</p></div>
+    <div class="services">
+      <div class="card">
+        <h3>Avaliação Imobiliária</h3>
+        <p>Laudos técnicos de avaliação para imóveis urbanos e rurais.</p>
+      </div>
+      <div class="card">
+        <h3>Perícia Judicial</h3>
+        <p>Atuação em processos judiciais com elaboração de pareceres técnicos precisos.</p>
+      </div>
+      <div class="card">
+        <h3>Assistência Técnica</h3>
+        <p>Suporte a advogados, construtoras e incorporadoras em disputas e projetos.</p>
+      </div>
     </div>
   </section>
 
+  <!-- AVALIAÇÃO - TEXTO COMPLETO -->
+  <section id="avaliacao">
+    <h2>📏 Avaliação de Imóveis: Segurança e Credibilidade</h2>
+    <div class="wrap">
+      <p class="lead">
+        A avaliação de imóveis é um documento técnico e oficial, elaborado por profissional habilitado, que determina o valor real de mercado de um bem.
+        Mais do que um simples preço, trata-se de uma análise criteriosa baseada em métodos reconhecidos e normas técnicas (ABNT NBR 14.653, COFECI/CNAI).
+      </p>
+
+      <h3>🔹 Principais Métodos Utilizados</h3>
+      <ul>
+        <li><strong>Inferência Estatística</strong> – análise comparativa baseada em dados e amostras de imóveis semelhantes.</li>
+        <li><strong>Por Fatores (homogeneização)</strong> – considera localização, padrão construtivo, idade e conservação.</li>
+        <li><strong>Método Paradigma</strong> – comparação com imóvel de referência previamente definido.</li>
+        <li><strong>Método Evolutivo</strong> – valor do terreno somado ao custo de reprodução/reconstrução da edificação.</li>
+        <li><strong>Método Involutivo</strong> – aplicado a terrenos/empreendimentos, considera potencial construtivo e valor do produto final.</li>
+      </ul>
+
+      <h3>🔹 Onde a Avaliação é Essencial</h3>
+      <ul>
+        <li>Financiamento bancário e garantias</li>
+        <li>Inventários e partilhas</li>
+        <li>Ações de usucapião</li>
+        <li>Divórcios e dissoluções societárias</li>
+        <li>Compra e venda, permutas e regularização</li>
+        <li>Planejamento de incorporações e lançamentos</li>
+      </ul>
+
+      <h3>✅ Credibilidade e Valor Jurídico</h3>
+      <p>
+        Uma avaliação feita por Perita Avaliadora Judicial garante segurança às partes, evita litígios e é aceita como documento oficial
+        em tribunais, cartórios e instituições financeiras.
+      </p>
+    </div>
+  </section>
+
+  <!-- IMÓVEIS - CARDS GENÉRICOS -->
   <section id="imoveis">
     <h2>Imóveis</h2>
-    <div class="imoveis">
-      <div class="card">
-        <img src="https://picsum.photos/400/250?random=1" alt="Imóvel 1">
-        <h3>Apartamento Moderno</h3>
-        <p>Apartamento com 3 quartos, localizado em região privilegiada.</p>
-        <button>Saiba Mais</button>
-      </div>
-      <div class="card">
-        <img src="https://picsum.photos/400/250?random=2" alt="Imóvel 2">
-        <h3>Casa com Jardim</h3>
-        <p>Ampla casa térrea com área de lazer e jardim espaçoso.</p>
-        <button>Saiba Mais</button>
-      </div>
-      <div class="card">
-        <img src="https://picsum.photos/400/250?random=3" alt="Imóvel 3">
-        <h3>Cobertura Exclusiva</h3>
-        <p>Cobertura com vista panorâmica e área gourmet.</p>
-        <button>Saiba Mais</button>
-      </div>
+    <div class="grid">
+      <article class="imovel">
+        <img src="https://source.unsplash.com/600x400/?subdivision,lots,development" alt="Loteamento residencial">
+        <div class="box">
+          <h3>Loteamento Residencial</h3>
+          <p>Áreas para novos bairros planejados, com viabilidade e estudos técnicos.</p>
+          <a class="btn" href="#contato">Saiba mais</a>
+        </div>
+      </article>
+
+      <article class="imovel">
+        <img src="https://source.unsplash.com/600x400/?skyscraper,buildings,condominium" alt="Empreendimento vertical">
+        <div class="box">
+          <h3>Empreendimento Vertical</h3>
+          <p>Edifícios residenciais e mistos em regiões estratégicas e consolidadas.</p>
+          <a class="btn" href="#contato">Saiba mais</a>
+        </div>
+      </article>
+
+      <article class="imovel">
+        <img src="https://source.unsplash.com/600x400/?distribution,warehouse,logistics" alt="Centro de distribuição">
+        <div class="box">
+          <h3>Centro de Distribuição</h3>
+          <p>Áreas para logística e expansão empresarial, com acesso e zoneamento adequados.</p>
+          <a class="btn" href="#contato">Saiba mais</a>
+        </div>
+      </article>
+
+      <article class="imovel">
+        <img src="https://source.unsplash.com/600x400/?business,meeting,woman" alt="Reunião de negócios">
+        <div class="box">
+          <h3>Reunião de Negócios</h3>
+          <p>Atendimento consultivo com discrição e foco no objetivo do cliente.</p>
+          <a class="btn" href="#contato">Agendar</a>
+        </div>
+      </article>
     </div>
   </section>
 
+  <!-- LIVRO -->
   <section id="livro">
-    <h2>Meu Livro</h2>
-    <div class="sobre">
-      <img src="livro_capa_paginas.png" alt="A Leveza da Transformação" style="max-width:300px;border-radius:10px;">
-      <div>
-        <p>Sou autora do livro <strong>A Leveza da Transformação</strong>, onde compartilho reflexões sobre mudança e autodesenvolvimento.</p>
-        <a href="https://a.co/d/d9T3hVB" target="_blank">
-          <button>Comprar na Amazon</button>
-        </a>
+    <h2>📖 Meu Livro: A Leveza da Transformação</h2>
+    <div class="livro">
+      <img src="livro_capa_paginas.png" alt="Capa do Livro A Leveza da Transformação">
+      <div class="txt">
+        <p>Este livro traz reflexões sobre transformação, espiritualidade e o poder do reencontro consigo mesmo.
+           Uma leitura leve e inspiradora para quem busca autoconhecimento.</p>
+        <p><a class="btn" href="https://a.co/d/d9T3hVB" target="_blank">👉 Comprar na Amazon</a></p>
       </div>
     </div>
   </section>
 
-  <section id="depoimentos">
-    <h2>Depoimentos</h2>
-    <p style="text-align:center;">Em breve você poderá conferir aqui depoimentos de clientes e parceiros.</p>
-  </section>
+  <!-- PROSPECÇÃO DE ÁREAS E GLEBAS -->
+  <section id="areas">
+    <h2>🌎 Prospecção de Áreas Estratégicas</h2>
+    <div class="wrap">
+      <p class="lead">
+        Além da atuação pericial, ofereço assessoria para identificação e análise de áreas e glebas destinadas a diferentes finalidades,
+        com rigor técnico, total sigilo (termo de confidencialidade) e respaldo documental.
+      </p>
 
-  <section id="contato">
-    <h2>Contato</h2>
-    <div class="contato">
-      <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">📧</a>
-      <a href="https://wa.me/5548988666778" target="_blank">💬</a>
-      <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank">📷</a>
+      <h3>Para quem é</h3>
+      <ul>
+        <li>Construtoras, incorporadoras e fundos de investimento</li>
+        <li>Empresas em expansão (logística/industrial) e centros de distribuição</li>
+        <li>Pessoas físicas com alta complexidade patrimonial</li>
+      </ul>
+
+      <h3>Serviços incluídos</h3>
+      <ul>
+        <li>Identificação de áreas para loteamentos, condomínios horizontais, empreendimentos mistos e verticais</li>
+        <li>Localização de glebas para expansão empresarial, centros logísticos e industriais</li>
+        <li>Análise técnica com entrega de arquivos em <strong>KMZ</strong> (georreferenciamento)</li>
+        <li>Elaboração de carta de apresentação e dossiê técnico do imóvel</li>
+      </ul>
+
+      <h3>Modelagens de pagamento</h3>
+      <ul>
+        <li><strong>Built to Suit</strong> (construção sob medida)</li>
+        <li>Permuta física ou financeira</li>
+        <li>Aportes e estruturação de parcerias</li>
+        <li>Estruturação financeira personalizada</li>
+      </ul>
+
+      <p><strong>Resultado:</strong> segurança, discrição e credibilidade em todas as etapas da negociação.</p>
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Andréia Maria Braz - Perita Judicial Imobiliária</p>
+  <!-- POR QUE ME ESCOLHER (mantido) -->
+  <section id="porque">
+    <h2>Por que me escolher?</h2>
+    <ul>
+      <li>✔ Experiência em perícia judicial e avaliações</li>
+      <li>✔ Atuação em diversas cidades de SC</li>
+      <li>✔ Registro no CRECI e CNAI</li>
+      <li>✔ Atendimento profissional com sigilo e transparência</li>
+    </ul>
+  </section>
+
+  <!-- CONTATO / RODAPÉ -->
+  <footer id="contato">
+    <h2>Contato</h2>
+    <div class="social">
+      <!-- WhatsApp -->
+      <a href="https://wa.me/5548988666778" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+      </a>
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="Instagram">
+      </a>
+      <!-- E-mail -->
+      <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732200.png" alt="E-mail">
+      </a>
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/andr%C3%A9ia-br%C3%A1z-9b809b6a/" target="_blank">
+        <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn">
+      </a>
+    </div>
+    <p style="margin-top:10px;font-size:14px;">© 2025 - Andreia Maria Bráz</p>
   </footer>
 
-  <!-- Botão flutuante WhatsApp -->
-  <div class="whatsapp-float">
-    <a href="https://wa.me/5548988666778" target="_blank">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
-    </a>
-  </div>
+  <!-- BOTÕES FLUTUANTES -->
+  <a href="https://wa.me/5548988666778" class="whatsapp-float" target="_blank" aria-label="WhatsApp">💬</a>
+  <a href="#imoveis" class="imoveis-float" aria-label="Ir para Imóveis">🏠 Imóveis</a>
 
 </body>
 </html>
