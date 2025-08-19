@@ -3,179 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andréia Maria Bráz | Perita Avaliadora Judicial</title>
+  <title>Andréia Braz - Perita Judicial Imobiliária</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f5f7fa;
-    }
-    header {
-      background: #0d1b3d;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-    }
-    nav {
-      background: #13284b;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: white;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
-    section h2 {
-      color: #0d1b3d;
-    }
-    .book-cover {
-      display: block;
-      max-width: 250px;
-      margin: 20px auto;
-    }
-    footer {
-      background: #0d1b3d;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      margin-top: 20px;
-    }
-    /* WhatsApp floating button */
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: white;
-      border-radius: 50%;
-      width: 60px;
-      height: 60px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 30px;
-      cursor: pointer;
-      box-shadow: 0px 4px 6px rgba(0,0,0,0.2);
-      z-index: 1000;
-    }
-    .chat-box {
-      display: none;
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 300px;
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
-      padding: 15px;
-      z-index: 1000;
-    }
-    .chat-box h4 {
-      margin-top: 0;
-      color: #0d1b3d;
-    }
-    .chat-option {
-      background: #f0f0f0;
-      border: none;
-      padding: 10px;
-      margin: 5px 0;
-      width: 100%;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .chat-option:hover {
-      background: #d9e4f5;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #2c3e50; color: white; padding: 15px 0; position: fixed; width: 100%; top: 0; z-index: 1000; }
+    header nav { display: flex; justify-content: center; gap: 20px; }
+    header nav a { color: white; text-decoration: none; font-weight: bold; }
+    section { padding: 80px 20px; max-width: 1100px; margin: auto; }
+    h2 { color: #2c3e50; text-align: center; margin-bottom: 30px; }
+    .sobre { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px; }
+    .sobre img { max-width: 280px; border-radius: 50%; }
+    .servicos, .imoveis { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+    .card { border: 1px solid #ddd; border-radius: 10px; padding: 20px; background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.1); text-align: center; }
+    .card img { width: 100%; border-radius: 10px; }
+    .card button { margin-top: 10px; padding: 10px 15px; border: none; background: #2c3e50; color: white; border-radius: 5px; cursor: pointer; }
+    .contato { text-align: center; }
+    .contato a { margin: 0 10px; font-size: 30px; text-decoration: none; color: #2c3e50; }
+    footer { text-align: center; padding: 15px; background: #2c3e50; color: white; margin-top: 30px; }
+    /* Botão flutuante WhatsApp */
+    .whatsapp-float { position: fixed; bottom: 20px; right: 20px; z-index: 1000; }
+    .whatsapp-float img { width: 60px; height: 60px; }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Andréia Maria Bráz</h1>
-    <p>Perita Avaliadora Judicial | CRECI PF 64512</p>
+    <nav>
+      <a href="#sobre">Sobre Mim</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#imoveis">Imóveis</a>
+      <a href="#livro">Livro</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#contato">Contato</a>
+    </nav>
   </header>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#avaliacao">Avaliação de Imóveis</a>
-    <a href="#livro">Livro</a>
-    <a href="#contato">Contato</a>
-  </nav>
-
   <section id="sobre">
-    <h2>Sobre</h2>
-    <p>Sou Perita Avaliadora Judicial em Santa Catarina, inscrita e habilitada junto aos tribunais TJ-SC e AJG-SC. Atuo em perícias, avaliações imobiliárias, análises de mercado e laudos técnicos para processos judiciais e extrajudiciais.</p>
+    <h2>Sobre Mim</h2>
+    <div class="sobre">
+      <img src="IMG-20240911-WA0055.jpg" alt="Andréia Maria Braz">
+      <div>
+        <p>Sou <strong>Andréia Maria Braz</strong>, Perita Judicial Imobiliária com aprovação junto ao <strong>TJ-SC</strong> e <strong>AJG-SC</strong>. 
+        Atuo com experiência em perícias e avaliações de imóveis, oferecendo laudos técnicos com precisão e responsabilidade.</p>
+      </div>
+    </div>
   </section>
 
-  <section id="avaliacao">
-    <h2>Avaliação de Imóveis</h2>
-    <p>A avaliação de imóveis é um documento técnico e oficial, fundamental para dar segurança jurídica e econômica em diversas situações, como financiamentos, usucapião, inventários, dissolução de sociedade, regularização patrimonial, entre outros.</p>
-    <p>Os principais métodos utilizados são:</p>
-    <ul>
-      <li><strong>Inferência Estatística:</strong> análise baseada em banco de dados de imóveis semelhantes, com critérios estatísticos.</li>
-      <li><strong>Por Fatores:</strong> atribuição de pesos a características específicas do imóvel, como localização, padrão construtivo, idade e conservação.</li>
-      <li><strong>Paradigma:</strong> comparação direta com imóvel de referência, considerado modelo.</li>
-      <li><strong>Evolutivo:</strong> cálculo do custo de construção somado ao valor do terreno.</li>
-      <li><strong>Involutivo:</strong> análise de viabilidade de um projeto a ser desenvolvido no terreno.</li>
-    </ul>
-    <p>Com a avaliação, construtoras, incorporadoras e pessoas físicas têm uma base oficial, reconhecida judicialmente e tecnicamente, garantindo decisões seguras e embasadas.</p>
+  <section id="servicos">
+    <h2>Serviços</h2>
+    <div class="servicos">
+      <div class="card"><h3>Avaliação Imobiliária</h3><p>Laudos completos para ações judiciais e negociações seguras.</p></div>
+      <div class="card"><h3>Perícia Judicial</h3><p>Atuação em processos judiciais com imparcialidade técnica.</p></div>
+      <div class="card"><h3>Consultoria</h3><p>Orientação para advogados, incorporadoras e particulares.</p></div>
+    </div>
+  </section>
+
+  <section id="imoveis">
+    <h2>Imóveis</h2>
+    <div class="imoveis">
+      <div class="card">
+        <img src="https://picsum.photos/400/250?random=1" alt="Imóvel 1">
+        <h3>Apartamento Moderno</h3>
+        <p>Apartamento com 3 quartos, localizado em região privilegiada.</p>
+        <button>Saiba Mais</button>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/250?random=2" alt="Imóvel 2">
+        <h3>Casa com Jardim</h3>
+        <p>Ampla casa térrea com área de lazer e jardim espaçoso.</p>
+        <button>Saiba Mais</button>
+      </div>
+      <div class="card">
+        <img src="https://picsum.photos/400/250?random=3" alt="Imóvel 3">
+        <h3>Cobertura Exclusiva</h3>
+        <p>Cobertura com vista panorâmica e área gourmet.</p>
+        <button>Saiba Mais</button>
+      </div>
+    </div>
   </section>
 
   <section id="livro">
-    <h2>Livro</h2>
-    <p>Conheça meu livro <em>Laços da Eternidade</em>, que traz reflexões profundas sobre transformação, espiritualidade e conexões da vida.</p>
-    <a href="https://a.co/d/d9T3hVB" target="_blank">
-      <img src="livro_capa_paginas.png" alt="Capa do Livro Laços da Eternidade" class="book-cover">
-    </a>
-    <p><a href="https://a.co/d/d9T3hVB" target="_blank">Disponível na Amazon</a></p>
+    <h2>Meu Livro</h2>
+    <div class="sobre">
+      <img src="livro_capa_paginas.png" alt="A Leveza da Transformação" style="max-width:300px;border-radius:10px;">
+      <div>
+        <p>Sou autora do livro <strong>A Leveza da Transformação</strong>, onde compartilho reflexões sobre mudança e autodesenvolvimento.</p>
+        <a href="https://a.co/d/d9T3hVB" target="_blank">
+          <button>Comprar na Amazon</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="depoimentos">
+    <h2>Depoimentos</h2>
+    <p style="text-align:center;">Em breve você poderá conferir aqui depoimentos de clientes e parceiros.</p>
   </section>
 
   <section id="contato">
     <h2>Contato</h2>
-    <p>E-mail: <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">andreiabraz.periciaimobiliaria@gmail.com</a></p>
-    <p>Telefone: <a href="tel:+5548988666778">(48) 98866-6778</a></p>
+    <div class="contato">
+      <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">📧</a>
+      <a href="https://wa.me/5548988666778" target="_blank">💬</a>
+      <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank">📷</a>
+    </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Andréia Maria Bráz - Perita Avaliadora Judicial</p>
+    <p>&copy; 2025 Andréia Maria Braz - Perita Judicial Imobiliária</p>
   </footer>
 
-  <!-- WhatsApp floating button -->
-  <div class="whatsapp-float" onclick="toggleChat()">💬</div>
-
-  <div class="chat-box" id="chatBox">
-    <h4>Olá! Como posso ajudar?</h4>
-    <button class="chat-option" onclick="sendToWhatsApp('Gostaria de informações sobre perícia judicial.')">Perícia Judicial</button>
-    <button class="chat-option" onclick="sendToWhatsApp('Preciso de uma avaliação imobiliária.')">Avaliação de Imóvel</button>
-    <button class="chat-option" onclick="sendToWhatsApp('Quero falar sobre laudos técnicos.')">Laudos Técnicos</button>
-    <button class="chat-option" onclick="sendToWhatsApp('Tenho interesse em outros serviços.')">Outros Assuntos</button>
+  <!-- Botão flutuante WhatsApp -->
+  <div class="whatsapp-float">
+    <a href="https://wa.me/5548988666778" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
   </div>
 
-  <script>
-    function toggleChat() {
-      var chat = document.getElementById("chatBox");
-      chat.style.display = chat.style.display === "block" ? "none" : "block";
-    }
-
-    function sendToWhatsApp(message) {
-      var phoneNumber = "5548988666778";
-      var url = "https://wa.me/" + phoneNumber + "?text=" + encodeURIComponent(message);
-      window.open(url, "_blank");
-    }
-  </script>
 </body>
 </html>
