@@ -3,101 +3,159 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andreia Maria Braz - Imóveis e Perícia Judicial</title>
+  <title>Andreia Maria Braz - Perícia Judicial Imobiliária</title>
   <style>
+    /* ---------- ESTILO BASE ---------- */
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
       padding: 0;
-      line-height: 1.6;
-      background-color: #f9f9f9;
+      background: #f5f8fc;
       color: #333;
     }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      color: #003366;
+    }
+
+    a {
+      color: #0056b3;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #ff6600;
+    }
+
+    /* ---------- HEADER ---------- */
     header {
-      background: #003366;
+      background: linear-gradient(135deg, #003366, #00509e);
       color: #fff;
-      padding: 20px 10px;
+      padding: 40px 20px;
       text-align: center;
     }
+
     header h1 {
-      margin: 0;
-      font-size: 24px;
+      font-size: 32px;
+      margin-bottom: 5px;
     }
+
     header p {
       margin: 5px 0;
+      font-size: 16px;
     }
+
+    /* ---------- CONTEÚDO ---------- */
     main {
-      padding: 20px;
-      max-width: 900px;
+      max-width: 1100px;
       margin: auto;
+      padding: 40px 20px;
     }
+
     section {
-      margin-bottom: 40px;
+      margin-bottom: 60px;
     }
-    h2 {
-      color: #003366;
-      margin-bottom: 10px;
+
+    /* ---------- CARTÕES ---------- */
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      padding: 25px;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    /* ---------- SEÇÃO LIVRO ---------- */
     .livro {
       display: flex;
-      align-items: flex-start;
+      flex-wrap: wrap;
       gap: 20px;
-      background: #fff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      align-items: center;
     }
+
     .livro img {
-      max-width: 200px;
-      border-radius: 8px;
+      max-width: 250px;
+      border-radius: 10px;
+      transition: transform 0.3s;
     }
+
+    .livro img:hover {
+      transform: scale(1.05);
+    }
+
+    /* ---------- GALERIA ---------- */
     .galeria {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
     }
+
     .galeria img {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
+
+    .galeria img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    }
+
+    /* ---------- FOOTER ---------- */
     footer {
       text-align: center;
       background: #003366;
       color: #fff;
-      padding: 15px;
-      margin-top: 40px;
+      padding: 25px 15px;
+      margin-top: 50px;
     }
+
     footer a {
-      color: #fff;
-      text-decoration: underline;
+      color: #ffcc00;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
+  <!-- ---------- HEADER ---------- -->
   <header>
     <h1>Andreia Maria Braz</h1>
     <p>Perita Judicial Imobiliária | CRECI | CNAI | Escritora</p>
-    <p>Contato: andreia.braz76@gmail.com | (48) 98866-6778</p>
+    <p>📧 andreia.braz76@gmail.com | 📱 (48) 98866-6778</p>
   </header>
 
+  <!-- ---------- CONTEÚDO ---------- -->
   <main>
+    <!-- SEÇÃO LIVRO -->
     <section>
       <h2>📖 Meu Livro</h2>
-      <div class="livro">
+      <div class="card livro">
         <img src="livro_capa_paginas.png" alt="Capa do livro A Leveza da Transformação">
         <div>
-          <h3>A Leveza da Transformação: Como o Autocuidado e o Amor Podem Mudar Tudo</h3>
+          <h3>A Leveza da Transformação</h3>
+          <p><em>Como o Autocuidado e o Amor Podem Mudar Tudo</em></p>
           <p>
-            Este livro convida você a encontrar a leveza que tanto precisamos, a nos conectar com quem realmente somos e a viver uma vida mais plena.
+            Este livro convida você a encontrar a leveza que tanto precisamos, 
+            a nos conectar com quem realmente somos e a viver uma vida mais plena.
           </p>
           <p>
-            👉 <a href="https://www.amazon.com.br/dp/B0D46V6WKN" target="_blank">Clique aqui para comprar na Amazon</a>
+            👉 <a href="https://www.amazon.com.br/dp/B0D46V6WKN" target="_blank">
+              Clique aqui para comprar na Amazon
+            </a>
           </p>
         </div>
       </div>
     </section>
 
+    <!-- SEÇÃO GALERIA -->
     <section>
       <h2>📷 Galeria de Projetos e Atuação</h2>
       <div class="galeria">
@@ -110,6 +168,7 @@
     </section>
   </main>
 
+  <!-- ---------- FOOTER ---------- -->
   <footer>
     <p>&copy; 2025 Andreia Maria Braz - Todos os direitos reservados</p>
     <p><a href="mailto:andreia.braz76@gmail.com">Entre em contato</a></p>
