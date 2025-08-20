@@ -3,182 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andréia Maria Bráz | Perita Avaliadora Judicial</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      line-height: 1.6;
-      background-color: #f4f8fb;
-      color: #333;
-    }
-    header {
-      background: #002147;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.8rem;
-    }
-    nav {
-      background: #013067;
-      padding: 10px;
-      text-align: center;
-    }
-    nav a {
-      color: #fff;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    h2 {
-      color: #002147;
-      margin-bottom: 20px;
-    }
-    footer {
-      background: #002147;
-      color: #fff;
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-
-    /* Ícone flutuante do WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50px;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 2px 2px 3px #999;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-    }
-    .chatbox {
-      display: none;
-      position: fixed;
-      bottom: 90px;
-      right: 20px;
-      width: 280px;
-      background: #fff;
-      border: 1px solid #ccc;
-      border-radius: 10px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-      padding: 15px;
-      z-index: 101;
-    }
-    .chatbox h4 {
-      margin-top: 0;
-      color: #002147;
-    }
-    .chatbox button {
-      display: block;
-      width: 100%;
-      margin: 8px 0;
-      padding: 10px;
-      background: #25d366;
-      color: #fff;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-    }
-    .chatbox button:hover {
-      background: #1ebe5d;
-    }
-  </style>
+  <title>Andreia Maria Braz - Perícia Imobiliária</title>
+  
+  <link rel="stylesheet" href="style.css">
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <h1>Andréia Maria Bráz</h1>
-    <p>Perita Avaliadora Judicial | CRECI PF 64512</p>
-  </header>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#avaliacao">Avaliação de Imóveis</a>
-    <a href="#contato">Contato</a>
-    <a href="https://a.co/d/d9T3hVB" target="_blank">📖 Meu Livro</a>
-  </nav>
-
-  <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <p>Atuo como <strong>Perita Avaliadora Judicial</strong> em Santa Catarina, elaborando laudos técnicos para processos judiciais e extrajudiciais. Minha experiência abrange imóveis residenciais, comerciais e áreas urbanas, garantindo análises precisas, imparciais e fundamentadas em normas da ABNT e metodologias reconhecidas.</p>
-  </section>
-
-  <section id="avaliacao">
-    <h2>Avaliação de Imóveis</h2>
-    <p>A <strong>avaliação imobiliária</strong> é um documento técnico oficial, que atribui valor justo e fundamentado a um imóvel, com base em normas e metodologias reconhecidas. Esse parecer é essencial em situações como:</p>
-    <ul>
-      <li>Financiamentos bancários;</li>
-      <li>Inventários e partilhas de bens;</li>
-      <li>Usucapião;</li>
-      <li>Ações judiciais de divisão de bens ou desapropriação;</li>
-      <li>Compra, venda e investimentos imobiliários.</li>
-    </ul>
-    <p>Entre os principais <strong>métodos de avaliação</strong>, estão:</p>
-    <ul>
-      <li><strong>Inferência Estatística:</strong> análise com base em amostras de mercado e cálculos estatísticos;</li>
-      <li><strong>Fatores:</strong> aplicação de coeficientes que ajustam o valor de acordo com características do imóvel;</li>
-      <li><strong>Paradigma:</strong> comparação direta com um imóvel similar e de referência;</li>
-      <li><strong>Evolutivo:</strong> considera o valor do terreno somado ao custo de reprodução do imóvel;</li>
-      <li><strong>Involutivo:</strong> utilizado em terrenos e incorporações, considerando o potencial construtivo e retorno financeiro futuro.</li>
-    </ul>
-    <p>Uma avaliação bem elaborada dá segurança jurídica, evita conflitos e garante negociações mais justas e transparentes.</p>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>📧 <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">andreiabraz.periciaimobiliaria@gmail.com</a></p>
-    <p>📞 (48) 98866-6778</p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Andréia Maria Bráz - Perita Avaliadora Judicial</p>
-  </footer>
-
-  <!-- Botão flutuante WhatsApp -->
-  <div class="whatsapp-float" onclick="toggleChat()">💬</div>
-
-  <!-- Chatbox -->
-  <div class="chatbox" id="chatbox">
-    <h4>💬 Fale comigo no WhatsApp</h4>
-    <p>Como posso te ajudar?</p>
-    <button onclick="redirectWhatsApp('Gostaria de solicitar uma avaliação imobiliária.')">Avaliação de imóvel</button>
-    <button onclick="redirectWhatsApp('Tenho interesse em serviços de perícia judicial.')">Perícia Judicial</button>
-    <button onclick="redirectWhatsApp('Quero mais informações sobre seu livro.')">Informações sobre o livro</button>
-    <button onclick="redirectWhatsApp('Outro assunto.')">Outro assunto</button>
+<header>
+  <img src="IMG-20240911-WA0055.jpg" alt="Andreia Maria Braz">
+  <h1>Andreia Maria Braz</h1>
+  <p>Perita Avaliadora Judicial • Especialista em Imóveis e Expansão Empresarial</p>
+  <div class="icons">
+    <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+    <a href="https://wa.me/5548988666778" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+    <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+    <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
   </div>
+</header>
 
-  <script>
-    function toggleChat() {
-      var chatbox = document.getElementById("chatbox");
-      chatbox.style.display = chatbox.style.display === "block" ? "none" : "block";
-    }
+<section id="avaliacao">
+  <h2>📏 Avaliação de Imóveis: Segurança e Credibilidade</h2>
+  <p>A avaliação de imóveis é um documento técnico e oficial, elaborado por profissional habilitado, que determina o valor real de mercado de um bem. Mais do que um simples preço, trata-se de uma análise criteriosa baseada em métodos reconhecidos e normas técnicas.</p>
+  <h3>🔹 Principais Métodos Utilizados</h3>
+  <ul>
+    <li><b>Inferência Estatística</b> – análise comparativa de mercado baseada em dados e amostras de imóveis semelhantes.</li>
+    <li><b>Por Fatores</b> – considera características específicas do imóvel, como localização, padrão construtivo e estado de conservação.</li>
+    <li><b>Método Paradigma</b> – compara com um imóvel de referência previamente definido como parâmetro.</li>
+    <li><b>Método Evolutivo</b> – calcula o valor do terreno mais o custo de reprodução da edificação.</li>
+    <li><b>Método Involutivo</b> – usado em terrenos e empreendimentos, considera o potencial construtivo e o valor do produto final.</li>
+  </ul>
+</section>
 
-    function redirectWhatsApp(msg) {
-      var phone = "5548988666778";
-      var url = "https://wa.me/" + phone + "?text=" + encodeURIComponent(msg);
-      window.open(url, "_blank");
-    }
-  </script>
+<section id="servicos">
+  <h2>📑 Serviços de Avaliação e Consultoria</h2>
+  <div class="cards">
+    <div class="card"><img src="https://source.unsplash.com/600x400/?house,for,sale" alt="Compra e Venda"><h3>Compra e Venda</h3><p>Definição justa de valor de mercado para negociações, garantindo segurança para ambas as partes.</p></div>
+    <div class="card"><img src="https://source.unsplash.com/600x400/?court,justice" alt="Processos Judiciais"><h3>Processos Judiciais</h3><p>Laudos para inventários, usucapião, divórcios, dissoluções societárias e outros litígios.</p></div>
+    <div class="card"><img src="https://source.unsplash.com/600x400/?bank,credit" alt="Financiamento"><h3>Financiamentos</h3><p>Avaliações para garantias bancárias e crédito imobiliário, atendendo aos requisitos das instituições.</p></div>
+    <div class="card"><img src="https://source.unsplash.com/600x400/?meeting,business,strategy" alt="Negócios Estratégicos"><h3>Negócios Estratégicos</h3><p>Assessoria em negociações complexas, built to suit, permutas e estruturação de projetos.</p></div>
+  </div>
+</section>
+
+<section id="prospeccao">
+  <h2>🌎 Prospecção de Áreas e Expansão Empresarial</h2>
+  <p>Além da atuação pericial, ofereço assessoria especializada em identificação e análise de áreas e glebas para diferentes finalidades, com total sigilo e rigor técnico.</p>
+  <ul>
+    <li>Loteamentos urbanos e condomínios</li>
+    <li>Expansão de empresas e centros de distribuição</li>
+    <li>Incorporação imobiliária e projetos de grande porte</li>
+  </ul>
+  <p><b>Diferenciais:</b> confidencialidade absoluta, apresentação em formato KMZ, modelagens financeiras flexíveis (Built to Suit, permutas, aportes, estruturação personalizada).</p>
+</section>
+
+<footer>
+  <p>&copy; 2025 - Andreia Maria Braz | Perícia Judicial Imobiliária</p>
+</footer>
+
+<div class="chat-btn" onclick="toggleMenu()">
+  <i class="fa-solid fa-comments"></i>
+</div>
+<div class="chat-menu" id="chatMenu">
+  <a href="#avaliacao">📏 Avaliação de Imóveis</a>
+  <a href="#servicos">📑 Serviços de Avaliação</a>
+  <a href="#prospeccao">📂 Prospecção de Áreas</a>
+</div>
+
+<script>
+  function toggleMenu(){
+    const menu = document.getElementById("chatMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+</script>
+
 </body>
 </html>
