@@ -3,182 +3,116 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andréia Maria Bráz - Imóveis & Perícia</title>
+  <title>Andreia Maria Braz - Imóveis e Perícia Judicial</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
-      background-color: #ffffff;
-      color: #0b1a36;
-    }
-
-    header {
-      background-color: #0b1a36; /* azul marinho */
-      color: white;
-      padding: 15px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    header img {
-      height: 60px;
-    }
-
-    nav ul {
-      list-style: none;
-      margin: 0;
       padding: 0;
-      display: flex;
+      line-height: 1.6;
+      background-color: #f9f9f9;
+      color: #333;
     }
-
-    nav ul li {
-      position: relative;
-      margin-left: 20px;
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 20px 10px;
+      text-align: center;
     }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 12px;
+    header h1 {
+      margin: 0;
+      font-size: 24px;
     }
-
-    nav ul li a:hover {
-      color: #d4af37; /* dourado */
-    }
-
-    nav ul li ul {
-      display: none;
-      position: absolute;
-      background-color: #0b1a36;
-      padding: 10px;
-      border-radius: 5px;
-      top: 100%;
-      left: 0;
-      min-width: 180px;
-    }
-
-    nav ul li:hover ul {
-      display: block;
-    }
-
-    nav ul li ul li {
+    header p {
       margin: 5px 0;
     }
-
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
     section {
-      padding: 50px 20px;
-      text-align: center;
+      margin-bottom: 40px;
     }
-
-    section h1, section h2 {
-      color: #0b1a36;
+    h2 {
+      color: #003366;
+      margin-bottom: 10px;
     }
-
-    section img {
-      max-width: 300px;
-      margin-top: 20px;
+    .livro {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+      background: #fff;
+      padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
-
-    .highlight {
-      background-color: #f5f5f5;
-      padding: 40px 20px;
+    .livro img {
+      max-width: 200px;
+      border-radius: 8px;
     }
-
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+    .galeria img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
     footer {
-      background-color: #0b1a36;
-      color: white;
       text-align: center;
+      background: #003366;
+      color: #fff;
       padding: 15px;
       margin-top: 40px;
     }
-
     footer a {
-      color: #d4af37;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-
-    footer a:hover {
+      color: #fff;
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-
   <header>
-    <img src="logo.png" alt="Logo Andréia Maria Bráz">
-    <nav>
-      <ul>
-        <li><a href="#inicio">Início</a></li>
-        <li>
-          <a href="#">Serviços ▼</a>
-          <ul>
-            <li><a href="#laudos">Laudos Periciais</a></li>
-            <li><a href="#loteamentos">Áreas e Loteamentos</a></li>
-            <li><a href="#empresas">Expansão de Empresas</a></li>
-            <li><a href="#distribuicao">Centros de Distribuição</a></li>
-          </ul>
-        </li>
-        <li><a href="#livro">Livro</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
+    <h1>Andreia Maria Braz</h1>
+    <p>Perita Judicial Imobiliária | CRECI | CNAI | Escritora</p>
+    <p>Contato: andreia.braz76@gmail.com | (48) 98866-6778</p>
   </header>
 
-  <section id="inicio">
-    <h1>Bem-vindo ao site oficial de Andréia Maria Bráz</h1>
-    <p>Especialista em imóveis de alto padrão, perícia judicial imobiliária e prospecção de áreas estratégicas.</p>
-    <img src="predios.jpg" alt="Imagem prédios">
-  </section>
+  <main>
+    <section>
+      <h2>📖 Meu Livro</h2>
+      <div class="livro">
+        <img src="livro_capa_paginas.png" alt="Capa do livro A Leveza da Transformação">
+        <div>
+          <h3>A Leveza da Transformação: Como o Autocuidado e o Amor Podem Mudar Tudo</h3>
+          <p>
+            Este livro convida você a encontrar a leveza que tanto precisamos, a nos conectar com quem realmente somos e a viver uma vida mais plena.
+          </p>
+          <p>
+            👉 <a href="https://www.amazon.com.br/dp/B0D46V6WKN" target="_blank">Clique aqui para comprar na Amazon</a>
+          </p>
+        </div>
+      </div>
+    </section>
 
-  <section id="laudos" class="highlight">
-    <h2>Laudos Periciais</h2>
-    <p>Atuação como Perita Avaliadora Judicial em Santa Catarina, com laudos técnicos e imparciais.</p>
-    <img src="laudos.jpg" alt="Imagem Laudos">
-  </section>
-
-  <section id="loteamentos">
-    <h2>Áreas e Loteamentos</h2>
-    <p>Prospecção sigilosa de glebas e áreas para loteamentos, com estudos e viabilidade.</p>
-    <img src="loteamento.jpg" alt="Imagem Loteamento">
-  </section>
-
-  <section id="empresas" class="highlight">
-    <h2>Expansão de Empresas</h2>
-    <p>Atuação na identificação de áreas estratégicas para expansão de negócios, com total sigilo.</p>
-    <img src="reuniao.jpg" alt="Imagem reunião de negócios">
-  </section>
-
-  <section id="distribuicao">
-    <h2>Centros de Distribuição</h2>
-    <p>Identificação de terrenos em áreas logísticas privilegiadas para implantação de centros de distribuição.</p>
-    <img src="centrodistribuicao.jpg" alt="Imagem Centro de Distribuição">
-  </section>
-
-  <section id="livro" class="highlight">
-    <h2>Livro: Laços da Eternidade</h2>
-    <p>Um relato inspirador sobre transformação espiritual e propósito de vida.</p>
-    <img src="livro.jpg" alt="Capa do livro">
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <p>Entre em contato para mais informações:</p>
-    <p><strong>Email:</strong> <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">andreiabraz.periciaimobiliaria@gmail.com</a></p>
-    <p><strong>Telefone:</strong> (48) 98866-6778</p>
-    <p>
-      <a href="https://www.instagram.com" target="_blank">Instagram</a> | 
-      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-    </p>
-  </section>
+    <section>
+      <h2>📷 Galeria de Projetos e Atuação</h2>
+      <div class="galeria">
+        <img src="1.png" alt="Imagem 1">
+        <img src="predios.png" alt="Prédios">
+        <img src="loetamento.png" alt="Loteamento">
+        <img src="centro de distribuição.png" alt="Centro de Distribuição">
+        <img src="reunião de negócios.png" alt="Reunião de Negócios">
+      </div>
+    </section>
+  </main>
 
   <footer>
-    <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados.</p>
+    <p>&copy; 2025 Andreia Maria Braz - Todos os direitos reservados</p>
+    <p><a href="mailto:andreia.braz76@gmail.com">Entre em contato</a></p>
   </footer>
-
 </body>
 </html>
