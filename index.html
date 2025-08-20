@@ -5,13 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andreia Maria Braz - Perícia Judicial Imobiliária</title>
   <style>
-    /* ---------- ESTILO BASE ---------- */
     body {
       font-family: 'Segoe UI', Arial, sans-serif;
       margin: 0;
       padding: 0;
       background: #f5f8fc;
       color: #333;
+      scroll-behavior: smooth;
     }
 
     h1, h2, h3 {
@@ -29,25 +29,61 @@
       color: #ff6600;
     }
 
+    /* ---------- MENU FIXO ---------- */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: #003366;
+      padding: 12px 0;
+      z-index: 1000;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.2);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      font-weight: 500;
+      font-size: 16px;
+      transition: 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffcc00;
+    }
+
     /* ---------- HEADER ---------- */
     header {
       background: linear-gradient(135deg, #003366, #00509e);
       color: #fff;
-      padding: 40px 20px;
+      padding: 80px 20px 40px;
       text-align: center;
+      overflow: hidden;
     }
 
     header h1 {
-      font-size: 32px;
+      font-size: 36px;
       margin-bottom: 5px;
+      background: linear-gradient(90deg, #fff, #ffcc00, #fff);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-size: 200% auto;
+      animation: shine 4s linear infinite;
     }
 
-    header p {
-      margin: 5px 0;
-      font-size: 16px;
+    @keyframes shine {
+      to { background-position: 200% center; }
     }
 
-    /* ---------- CONTEÚDO ---------- */
     main {
       max-width: 1100px;
       margin: auto;
@@ -58,13 +94,16 @@
       margin-bottom: 60px;
     }
 
-    /* ---------- CARTÕES ---------- */
+    /* ---------- CARDS ---------- */
     .card {
       background: #fff;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
       padding: 25px;
       transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeUp 1s forwards;
     }
 
     .card:hover {
@@ -72,7 +111,14 @@
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
 
-    /* ---------- SEÇÃO LIVRO ---------- */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ---------- LIVRO ---------- */
     .livro {
       display: flex;
       flex-wrap: wrap;
@@ -97,16 +143,41 @@
       gap: 20px;
     }
 
-    .galeria img {
-      width: 100%;
+    .galeria-item {
+      position: relative;
+      overflow: hidden;
       border-radius: 12px;
       box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .galeria img:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    .galeria img {
+      width: 100%;
+      display: block;
+      transition: transform 0.5s;
+    }
+
+    .galeria-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .galeria-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(100%);
+      transition: all 0.4s;
+    }
+
+    .galeria-item:hover .galeria-caption {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* ---------- FOOTER ---------- */
@@ -122,20 +193,86 @@
       color: #ffcc00;
       font-weight: bold;
     }
+
+    /* ---------- BOTÕES FIXOS ---------- */
+    .social-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 1000;
+    }
+
+    .social-buttons a {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 22px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+      animation: pulse 1.5s infinite;
+    }
+
+    .social-buttons a:hover {
+      transform: scale(1.1);
+    }
+
+    .whatsapp { background: #25D366; }
+    .instagram { background: #E1306C; }
+    .email { background: #00509e; }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* ---------- BOTÃO TOPO ---------- */
+    #toTop {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      background: #003366;
+      color: #fff;
+      border: none;
+      padding: 12px 16px;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    #toTop:hover {
+      background: #ff6600;
+    }
   </style>
 </head>
 <body>
-  <!-- ---------- HEADER ---------- -->
+  <!-- MENU FIXO -->
+  <nav>
+    <ul>
+      <li><a href="#livro">📖 Livro</a></li>
+      <li><a href="#galeria">📷 Galeria</a></li>
+      <li><a href="#contato">📩 Contato</a></li>
+    </ul>
+  </nav>
+
   <header>
     <h1>Andreia Maria Braz</h1>
     <p>Perita Judicial Imobiliária | CRECI | CNAI | Escritora</p>
     <p>📧 andreia.braz76@gmail.com | 📱 (48) 98866-6778</p>
   </header>
 
-  <!-- ---------- CONTEÚDO ---------- -->
   <main>
-    <!-- SEÇÃO LIVRO -->
-    <section>
+    <section id="livro">
       <h2>📖 Meu Livro</h2>
       <div class="card livro">
         <img src="livro_capa_paginas.png" alt="Capa do livro A Leveza da Transformação">
@@ -155,23 +292,61 @@
       </div>
     </section>
 
-    <!-- SEÇÃO GALERIA -->
-    <section>
+    <section id="galeria">
       <h2>📷 Galeria de Projetos e Atuação</h2>
       <div class="galeria">
-        <img src="1.png" alt="Imagem 1">
-        <img src="predios.png" alt="Prédios">
-        <img src="loetamento.png" alt="Loteamento">
-        <img src="centro de distribuição.png" alt="Centro de Distribuição">
-        <img src="reunião de negócios.png" alt="Reunião de Negócios">
+        <div class="galeria-item">
+          <img src="1.png" alt="Imagem 1">
+          <div class="galeria-caption">Imagem 1</div>
+        </div>
+        <div class="galeria-item">
+          <img src="predios.png" alt="Prédios">
+          <div class="galeria-caption">Prédios</div>
+        </div>
+        <div class="galeria-item">
+          <img src="loteamento.png" alt="Loteamento">
+          <div class="galeria-caption">Loteamento</div>
+        </div>
+        <div class="galeria-item">
+          <img src="centro-distribuicao.png" alt="Centro de Distribuição">
+          <div class="galeria-caption">Centro de Distribuição</div>
+        </div>
+        <div class="galeria-item">
+          <img src="reuniao-negocios.png" alt="Reunião de Negócios">
+          <div class="galeria-caption">Reunião de Negócios</div>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- ---------- FOOTER ---------- -->
-  <footer>
+  <footer id="contato">
     <p>&copy; 2025 Andreia Maria Braz - Todos os direitos reservados</p>
     <p><a href="mailto:andreia.braz76@gmail.com">Entre em contato</a></p>
   </footer>
+
+  <!-- BOTÕES FIXOS -->
+  <div class="social-buttons">
+    <a href="https://wa.me/5548988666778" class="whatsapp" target="_blank">💬</a>
+    <a href="https://www.instagram.com/andreia.pericia" class="instagram" target="_blank">📸</a>
+    <a href="mailto:andreia.braz76@gmail.com" class="email">✉️</a>
+  </div>
+
+  <!-- BOTÃO VOLTAR AO TOPO -->
+  <button id="toTop">⬆</button>
+
+  <script>
+    // Mostrar/esconder botão "voltar ao topo"
+    const toTop = document.getElementById("toTop");
+    window.onscroll = function() {
+      if (document.documentElement.scrollTop > 300) {
+        toTop.style.display = "block";
+      } else {
+        toTop.style.display = "none";
+      }
+    };
+    toTop.onclick = function() {
+      window.scrollTo({top: 0, behavior: 'smooth'});
+    };
+  </script>
 </body>
 </html>
