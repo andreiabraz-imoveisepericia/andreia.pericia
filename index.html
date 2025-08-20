@@ -3,131 +3,182 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andreia Maria Braz - Perícia Imobiliária</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Andréia Maria Bráz - Imóveis & Perícia</title>
   <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; line-height:1.6; background:#f4f4f4; }
-    
-    header { background:#1B2A41; color:#fff; padding:2rem 1rem; text-align:center; }
-    header img { width:160px; height:160px; border-radius:50%; border:4px solid #C8A600; }
-    header h1 { margin-top:1rem; font-size:1.8rem; color:#C8A600; }
-    header p { margin:0.5rem 0; color:#eaeaea; }
-    .icons { margin-top:1rem; }
-    .icons a { color:#fff; margin:0 0.5rem; font-size:1.5rem; transition:0.3s; }
-    .icons a:hover { color:#C8A600; }
-
-    section { padding:3rem 1rem; max-width:1000px; margin:auto; background:#fff; border-radius:12px; margin-bottom:2rem; box-shadow:0 4px 10px rgba(0,0,0,0.08); }
-    section h2 { color:#1B2A41; margin-bottom:1rem; border-left:6px solid #006644; padding-left:12px; }
-    section h3 { color:#006644; }
-
-    .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
-    .card { background:#fff; border-radius:12px; box-shadow:0 4px 8px rgba(0,0,0,0.1); padding:1.5rem; transition:0.3s; border-top:4px solid #C8A600; }
-    .card:hover { transform:translateY(-5px); }
-    .card img { width:100%; border-radius:12px; margin-bottom:1rem; }
-
-    footer { background:#1B2A41; color:#fff; text-align:center; padding:1.5rem; font-size:0.9rem; }
-
-    /* Botão flutuante */
-    .chat-btn { 
-      position:fixed; bottom:20px; right:20px; 
-      background:#006644; color:#fff; 
-      width:60px; height:60px; 
-      border-radius:50%; 
-      display:flex; justify-content:center; align-items:center;
-      font-size:1.8rem; cursor:pointer; 
-      box-shadow:0 4px 10px rgba(0,0,0,0.3); 
-      z-index:1000;
-      transition:0.3s;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #ffffff;
+      color: #0b1a36;
     }
-    .chat-btn:hover { background:#C8A600; color:#1B2A41; }
 
-    .chat-menu {
-      position:fixed; bottom:90px; right:20px;
-      background:#fff; border-radius:12px;
-      box-shadow:0 4px 10px rgba(0,0,0,0.2);
-      display:none; flex-direction:column;
-      overflow:hidden; width:240px;
-      border:2px solid #006644;
+    header {
+      background-color: #0b1a36; /* azul marinho */
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-    .chat-menu a {
-      padding:12px 16px; text-decoration:none; 
-      color:#1B2A41; font-weight:bold;
-      border-bottom:1px solid #eee;
+
+    header img {
+      height: 60px;
     }
-    .chat-menu a:hover { background:#f1f1f1; color:#006644; }
+
+    nav ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+    }
+
+    nav ul li {
+      position: relative;
+      margin-left: 20px;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 12px;
+    }
+
+    nav ul li a:hover {
+      color: #d4af37; /* dourado */
+    }
+
+    nav ul li ul {
+      display: none;
+      position: absolute;
+      background-color: #0b1a36;
+      padding: 10px;
+      border-radius: 5px;
+      top: 100%;
+      left: 0;
+      min-width: 180px;
+    }
+
+    nav ul li:hover ul {
+      display: block;
+    }
+
+    nav ul li ul li {
+      margin: 5px 0;
+    }
+
+    section {
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    section h1, section h2 {
+      color: #0b1a36;
+    }
+
+    section img {
+      max-width: 300px;
+      margin-top: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .highlight {
+      background-color: #f5f5f5;
+      padding: 40px 20px;
+    }
+
+    footer {
+      background-color: #0b1a36;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #d4af37;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
 
-<header>
-  <img src="IMG-20240911-WA0055.jpg" alt="Andreia Maria Braz">
-  <h1>Andreia Maria Braz</h1>
-  <p>Perita Avaliadora Judicial • Especialista em Imóveis e Expansão Empresarial</p>
-  <div class="icons">
-    <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-    <a href="https://wa.me/5548988666778" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-    <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-    <a href="https://www.linkedin.com" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-  </div>
-</header>
+  <header>
+    <img src="logo.png" alt="Logo Andréia Maria Bráz">
+    <nav>
+      <ul>
+        <li><a href="#inicio">Início</a></li>
+        <li>
+          <a href="#">Serviços ▼</a>
+          <ul>
+            <li><a href="#laudos">Laudos Periciais</a></li>
+            <li><a href="#loteamentos">Áreas e Loteamentos</a></li>
+            <li><a href="#empresas">Expansão de Empresas</a></li>
+            <li><a href="#distribuicao">Centros de Distribuição</a></li>
+          </ul>
+        </li>
+        <li><a href="#livro">Livro</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
 
-<section id="avaliacao">
-  <h2>📏 Avaliação de Imóveis: Segurança e Credibilidade</h2>
-  <p>A avaliação de imóveis é um documento técnico e oficial, elaborado por profissional habilitado, que determina o valor real de mercado de um bem. Mais do que um simples preço, trata-se de uma análise criteriosa baseada em métodos reconhecidos e normas técnicas.</p>
-  <h3>🔹 Principais Métodos Utilizados</h3>
-  <ul>
-    <li><b>Inferência Estatística</b> – análise comparativa de mercado baseada em dados e amostras de imóveis semelhantes.</li>
-    <li><b>Por Fatores</b> – considera características específicas do imóvel, como localização, padrão construtivo e estado de conservação.</li>
-    <li><b>Método Paradigma</b> – compara com um imóvel de referência previamente definido como parâmetro.</li>
-    <li><b>Método Evolutivo</b> – calcula o valor do terreno mais o custo de reprodução da edificação.</li>
-    <li><b>Método Involutivo</b> – usado em terrenos e empreendimentos, considera o potencial construtivo e o valor do produto final.</li>
-  </ul>
-</section>
+  <section id="inicio">
+    <h1>Bem-vindo ao site oficial de Andréia Maria Bráz</h1>
+    <p>Especialista em imóveis de alto padrão, perícia judicial imobiliária e prospecção de áreas estratégicas.</p>
+    <img src="predios.jpg" alt="Imagem prédios">
+  </section>
 
-<section id="prospeccao">
-  <h2>🌎 Prospecção de Áreas e Expansão Empresarial</h2>
-  <p>Além da atuação pericial, ofereço assessoria especializada em identificação e análise de áreas e glebas para diferentes finalidades, com total sigilo e rigor técnico.</p>
-  <ul>
-    <li>Loteamentos urbanos e condomínios</li>
-    <li>Expansão de empresas e centros de distribuição</li>
-    <li>Incorporação imobiliária e projetos de grande porte</li>
-  </ul>
-  <p><b>Diferenciais:</b> confidencialidade absoluta, apresentação em formato KMZ, modelagens financeiras flexíveis (Built to Suit, permutas, aportes, estruturação personalizada).</p>
-</section>
+  <section id="laudos" class="highlight">
+    <h2>Laudos Periciais</h2>
+    <p>Atuação como Perita Avaliadora Judicial em Santa Catarina, com laudos técnicos e imparciais.</p>
+    <img src="laudos.jpg" alt="Imagem Laudos">
+  </section>
 
-<section id="laudos">
-  <h2>📑 Onde a Avaliação é Essencial</h2>
-  <div class="cards">
-    <div class="card"><img src="https://source.unsplash.com/600x400/?house" alt="Imóvel"><h3>Compra e Venda</h3><p>Definição justa de valor de mercado para negociações.</p></div>
-    <div class="card"><img src="https://source.unsplash.com/600x400/?court" alt="Judiciário"><h3>Processos Judiciais</h3><p>Inventários, usucapião, divórcios, dissoluções societárias.</p></div>
-    <div class="card"><img src="https://source.unsplash.com/600x400/?bank" alt="Banco"><h3>Financiamentos</h3><p>Garantias bancárias e avaliações para crédito imobiliário.</p></div>
-    <div class="card"><img src="https://source.unsplash.com/600x400/?meeting" alt="Reunião"><h3>Negócios Estratégicos</h3><p>Assessoria em negociações complexas e expansão empresarial.</p></div>
-  </div>
-</section>
+  <section id="loteamentos">
+    <h2>Áreas e Loteamentos</h2>
+    <p>Prospecção sigilosa de glebas e áreas para loteamentos, com estudos e viabilidade.</p>
+    <img src="loteamento.jpg" alt="Imagem Loteamento">
+  </section>
 
-<footer>
-  <p>&copy; 2025 - Andreia Maria Braz | Perícia Judicial Imobiliária</p>
-</footer>
+  <section id="empresas" class="highlight">
+    <h2>Expansão de Empresas</h2>
+    <p>Atuação na identificação de áreas estratégicas para expansão de negócios, com total sigilo.</p>
+    <img src="reuniao.jpg" alt="Imagem reunião de negócios">
+  </section>
 
-<!-- Botão Flutuante -->
-<div class="chat-btn" onclick="toggleMenu()">
-  <i class="fa-solid fa-comments"></i>
-</div>
-<div class="chat-menu" id="chatMenu">
-  <a href="#avaliacao">📏 Avaliação de Imóveis</a>
-  <a href="#imoveis">🏢 Imóveis</a>
-  <a href="#assistencia">⚖ Assistência Técnica Judicial</a>
-  <a href="#laudos">📑 Laudos</a>
-  <a href="#prospeccao">📂 Prospecção de Áreas Estratégicas</a>
-  <a href="#built">🏗 Built to Suit / Permutas / Estruturações</a>
-</div>
+  <section id="distribuicao">
+    <h2>Centros de Distribuição</h2>
+    <p>Identificação de terrenos em áreas logísticas privilegiadas para implantação de centros de distribuição.</p>
+    <img src="centrodistribuicao.jpg" alt="Imagem Centro de Distribuição">
+  </section>
 
-<script>
-  function toggleMenu(){
-    const menu = document.getElementById("chatMenu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
-  }
-</script>
+  <section id="livro" class="highlight">
+    <h2>Livro: Laços da Eternidade</h2>
+    <p>Um relato inspirador sobre transformação espiritual e propósito de vida.</p>
+    <img src="livro.jpg" alt="Capa do livro">
+  </section>
+
+  <section id="contato">
+    <h2>Contato</h2>
+    <p>Entre em contato para mais informações:</p>
+    <p><strong>Email:</strong> <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">andreiabraz.periciaimobiliaria@gmail.com</a></p>
+    <p><strong>Telefone:</strong> (48) 98866-6778</p>
+    <p>
+      <a href="https://www.instagram.com" target="_blank">Instagram</a> | 
+      <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados.</p>
+  </footer>
 
 </body>
 </html>
