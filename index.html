@@ -40,6 +40,7 @@
       font-weight: bold;
       transition: all 0.3s;
     }
+
     nav a:hover {
       background: #fff;
       color: #0a2a43;
@@ -71,13 +72,16 @@
       padding: 15px;
       margin-top: 40px;
     }
-    
-    /* Estilos do Botão e Menu Flutuantes */
+
+    /* Estilos do Novo Botão e Menu Flutuantes */
     .float-container {
       position: fixed;
       bottom: 20px;
       right: 20px;
       z-index: 1000;
+      display: flex;
+      flex-direction: column-reverse; /* Para o menu aparecer acima do botão */
+      align-items: flex-end;
     }
 
     .float-button {
@@ -100,26 +104,22 @@
     }
 
     .menu-popup {
-      position: absolute;
-      bottom: 70px; /* Acima do botão */
-      right: 0;
       background: #fff;
       border-radius: 8px;
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-      padding: 10px;
+      padding: 15px;
       width: 250px;
       display: none; /* Inicia oculto */
       flex-direction: column;
-      text-align: left;
+      margin-bottom: 15px; /* Espaço entre o menu e o botão */
     }
     
     .menu-popup h4 {
       margin: 0 0 10px 0;
-      color: #0a2a43;
-      padding: 0 10px;
-      border-bottom: 1px solid #eee;
-      padding-bottom: 8px;
+      color: #333;
+      text-align: center;
     }
+    
     .menu-popup a {
       display: block;
       background: #25d366;
@@ -130,11 +130,12 @@
       margin-top: 10px;
       font-weight: bold;
       text-align: center;
+      transition: background 0.3s;
     }
+    
     .menu-popup a:hover {
       background: #1ebd5a;
     }
-
   </style>
 </head>
 <body>
@@ -144,7 +145,7 @@
     <p>Imóveis & Perícia Imobiliária</p>
     <nav>
       <a href="#inicio">Início</a>
-      <a href="imoveis/imoveis.html">Imóveis</a>
+      <a href="imoveis/index.html">Imóveis</a>
       <a href="#sobre">Sobre Mim</a>
       <a href="#metodo">Método de Trabalho</a>
       <a href="#servicos">Serviços</a>
@@ -192,15 +193,15 @@
   </footer>
 
     <div class="float-container">
-        <div class="float-button" onclick="toggleMenu()">
-      <i class="fa-solid fa-comments"></i>
-    </div>
         <div class="menu-popup" id="whatsappMenu">
       <h4>Fale comigo no WhatsApp</h4>
       <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em avaliação de imóvel." target="_blank">Avaliação de imóvel</a>
       <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em perícia judicial." target="_blank">Perícia Judicial</a>
       <a href="https://wa.me/5548988666778?text=Olá, gostaria de informações sobre o livro." target="_blank">Informações sobre o livro</a>
       <a href="https://wa.me/5548988666778?text=Olá, tenho outro assunto." target="_blank">Outro assunto</a>
+    </div>
+        <div class="float-button" onclick="toggleMenu()">
+      <i class="fa-solid fa-comments"></i>
     </div>
   </div>
 
