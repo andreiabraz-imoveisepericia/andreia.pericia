@@ -101,6 +101,41 @@
       padding: 15px;
       margin-top: 40px;
     }
+    
+    /* Novo Estilo para as galerias de Imagens */
+    .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 20px;
+        max-width: 1100px;
+        margin: 40px auto;
+    }
+
+    .gallery-item {
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        padding: 20px;
+        text-align: center;
+        transition: transform 0.3s;
+    }
+
+    .gallery-item:hover {
+        transform: translateY(-5px);
+    }
+
+    .gallery-item img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 6px;
+        margin-bottom: 15px;
+    }
+
+    .gallery-item h4 {
+        color: #0a2a43;
+        font-size: 1.2em;
+        margin: 0 0 10px 0;
+    }
 
     /* Estilos do Novo Botão e Menu Flutuantes */
     .float-container {
@@ -177,6 +212,7 @@
       <a href="imoveis/index.html">Imóveis</a>
       <a href="#sobre">Sobre Mim</a>
       <a href="#servicos">Serviços</a>
+      <a href="#atuacao">Áreas de Atuação</a>
       <a href="#contato">Contato</a>
     </nav>
   </header>
@@ -214,10 +250,38 @@
     <p>Uma avaliação bem elaborada dá segurança jurídica, evita conflitos e garante negociações mais justas e transparentes.</p>
   </section>
 
+  <section id="atuacao">
+    <h2>Áreas de Atuação</h2>
+    <p>Confira algumas das áreas de atuação e especialidades dos serviços de avaliação e consultoria que oferecemos:</p>
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="imagens/loteamento.png" alt="Imagem de loteamento">
+        <h4>Loteamentos</h4>
+        <p>Especialista em análise de potencial construtivo e valor de mercado para áreas de loteamento, garantindo o melhor retorno para seu investimento.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="imagens/predios.png" alt="Imagem de prédios">
+        <h4>Prédios</h4>
+        <p>Avaliação de prédios residenciais e comerciais, novos ou usados, para compra, venda, inventário ou garantia bancária.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="imagens/centro de distribuicao.png" alt="Imagem de centro de distribuição">
+        <h4>Centros de Distribuição</h4>
+        <p>Perícia técnica e avaliação de centros logísticos, galpões e grandes áreas comerciais e industriais.</p>
+      </div>
+      <div class="gallery-item">
+        <img src="imagens/reuniao de negocios.png" alt="Imagem de reunião de negócios">
+        <h4>Negócios Estratégicos</h4>
+        <p>Assessoria em negociações complexas, built to suit, permutas e estruturação de projetos.</p>
+      </div>
+    </div>
+  </section>
+
   <section id="livro">
     <h2>Meu Livro</h2>
-    <p>Sobre o meu livro...</p>
-    <a href="#" target="_blank">Comprar na Amazon</a>
+    <img src="imagens/livro_capa_paginas.png" alt="Capa do livro" style="max-width: 250px; display: block; margin: 0 auto 20px;">
+    <p>Conheça meu livro "Perícia Imobiliária", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
+    <a href="#" target="_blank" style="display: block; text-align: center;">Comprar na Amazon</a>
   </section>
 
   <section id="contato">
