@@ -5,19 +5,177 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Andréia Maria Bráz - Imóveis e Perícia Imobiliária</title>
   
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+      background: #f4f6f9;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      background: #0a2a43;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      background: #d4af37;
+      color: #0a2a43;
+      padding: 10px 18px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s;
+    }
+
+    nav a:hover {
+      background: #fff;
+      color: #0a2a43;
+      border: 1px solid #d4af37;
+    }
+    
+    section {
+      padding: 60px 20px;
+      text-align: left;
+    }
+    
+    section#inicio, footer {
+      text-align: center;
+    }
+
+    section:nth-child(even) {
+      background: #fff;
+    }
+
+    section:nth-child(odd) {
+      background: #f4f6f9;
+    }
+
+    h2 {
+      color: #0a2a43;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    
+    h3 {
+      color: #0a2a43;
+      text-align: left;
+      margin-top: 2rem;
+    }
+    
+    section p {
+      max-width: 900px;
+      margin: 20px auto;
+      text-align: justify;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      max-width: 900px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    footer {
+      background: #0a2a43;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+
+    /* Estilos do Novo Botão e Menu Flutuantes */
+    .float-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 1000;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+    }
+
+    .float-button {
+      background: #25d366;
+      color: #fff;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 28px;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s;
+    }
+
+    .float-button:hover {
+      background: #1ebd5a;
+    }
+
+    .menu-popup {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      padding: 15px;
+      width: 250px;
+      display: none;
+      flex-direction: column;
+      margin-bottom: 15px;
+    }
+    
+    .menu-popup h4 {
+      margin: 0 0 10px 0;
+      color: #333;
+      text-align: center;
+    }
+    
+    .menu-popup a {
+      display: block;
+      background: #25d366;
+      color: #fff;
+      padding: 12px 15px;
+      text-decoration: none;
+      border-radius: 6px;
+      margin-top: 10px;
+      font-weight: bold;
+      text-align: center;
+      transition: background 0.3s;
+    }
+    
+    .menu-popup a:hover {
+      background: #1ebd5a;
+    }
+  </style>
 </head>
 <body>
 
   <header>
     <h1>Andréia Maria Bráz</h1>
-    <p>Imóveis & Perícia Imobiliária</p>
+    <p>Imóveis e Perícia Imobiliária</p>
     <nav>
       <a href="#inicio">Início</a>
       <a href="imoveis/index.html">Imóveis</a>
       <a href="#sobre">Sobre Mim</a>
-      <a href="#metodo">Método de Trabalho</a>
       <a href="#servicos">Serviços</a>
       <a href="#contato">Contato</a>
     </nav>
@@ -30,32 +188,43 @@
 
   <section id="sobre">
     <h2>Sobre Mim</h2>
-    <p>Sou Andréia Maria Bráz, perita judicial imobiliária com experiência em avaliação de imóveis urbanos e rurais.
-       Atuei em imobiliárias renomadas como Gralha Imóveis e Supervisão Imóveis. Possuo CRECI PF e PJ, CNAI,
-       certificações pelo IBREP e COFECI, além de experiência com perícias em diferentes comarcas de Santa Catarina e Paraná.</p>
-  </section>
-
-  <section id="metodo">
-    <h2>Método de Trabalho</h2>
-    <p>Trabalho com metodologias reconhecidas: Inferência Estatística, Método Evolutivo e Método Involutivo.
-       Sempre de forma técnica, fundamentada e transparente para auxiliar advogados, incorporadoras e clientes particulares.</p>
+    <p>Atuo como Perita Avaliadora Judicial em Santa Catarina, elaborando laudos técnicos para processos judiciais e extrajudiciais. Minha experiência abrange imóveis residenciais, comerciais e áreas urbanas, garantindo análises precisas, imparciais e fundamentadas em normas da ABNT e metodologias reconhecidas.</p>
+    <p>Sou Andréia Maria Bráz, perita judicial imobiliária com experiência em avaliação de imóveis urbanos e rurais. Atuei em imobiliárias renomadas como Gralha Imóveis e Supervisão Imóveis. Possuo CRECI PF e PJ, CNAI, certificações pelo IBREP e COFECI, além de experiência com perícias em diferentes comarcas de Santa Catarina e Paraná.</p>
   </section>
 
   <section id="servicos">
-    <h2>Serviços</h2>
-    <ul style="list-style:none; padding:0;">
-      <li>✅ Avaliação de imóveis urbanos e rurais</li>
-      <li>✅ Assistência técnica em processos judiciais</li>
-      <li>✅ Consultoria imobiliária para incorporadoras</li>
-      <li>✅ Perícia judicial e extrajudicial</li>
+    <h2>Serviços e Métodos</h2>
+    <p>A avaliação imobiliária é um documento técnico oficial, que atribui valor justo e fundamentado a um imóvel, com base em normas e metodologias reconhecidas. Esse parecer é essencial em situações como:</p>
+    <ul>
+      <li>✅ Financiamentos bancários;</li>
+      <li>✅ Inventários e partilhas de bens;</li>
+      <li>✅ Usucapião;</li>
+      <li>✅ Ações judiciais de divisão de bens ou desapropriação;</li>
+      <li>✅ Compra, venda e investimentos imobiliários.</li>
     </ul>
+    
+    <h3>Entre os principais métodos de avaliação, estão:</h3>
+    <ul>
+      <li>✅ **Inferência Estatística:** análise com base em amostras de mercado e cálculos estatísticos;</li>
+      <li>✅ **Fatores:** aplicação de coeficientes que ajustam o valor de acordo com características do imóvel;</li>
+      <li>✅ **Paradigma:** comparação direta com um imóvel similar e de referência;</li>
+      <li>✅ **Evolutivo:** considera o valor do terreno somado ao custo de reprodução do imóvel;</li>
+      <li>✅ **Involutivo:** utilizado em terrenos e incorporações, considerando o potencial construtivo e retorno financeiro futuro.</li>
+    </ul>
+    <p>Uma avaliação bem elaborada dá segurança jurídica, evita conflitos e garante negociações mais justas e transparentes.</p>
+  </section>
+
+  <section id="livro">
+    <h2>Meu Livro</h2>
+    <p>Sobre o meu livro...</p>
+    <a href="#" target="_blank">Comprar na Amazon</a>
   </section>
 
   <section id="contato">
     <h2>Contato</h2>
-    <p>Email: <a href="mailto:andreia.braz76@gmail.com">andreia.braz76@gmail.com</a></p>
+    <p>Email: <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">andreiabraz.periciaimobiliaria@gmail.com</a></p>
     <p>Telefone: <a href="tel:+5548988666778">(48) 98866-6778</a></p>
-    <p>Cidade: Palhoça - SC</p>
+    
   </section>
 
   <footer>
@@ -66,8 +235,10 @@
     <div class="menu-popup" id="whatsappMenu">
       <h4>Fale comigo no WhatsApp</h4>
       <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em avaliação de imóvel." target="_blank">Avaliação de imóvel</a>
-      <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em perícia judicial." target="_blank">Perícia Judicial</a>
-      <a href="https://wa.me/5548988666778?text=Olá, gostaria de informações sobre o livro." target="_blank">Informações sobre o livro</a>
+      <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em co,pra de imóveis." target="_blank">Pcompra de imóvel </a>
+      <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em vender meu imóvel." target="_blank">Pvender meu imóvel</a>
+      <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em perícia judicial." target="_blank">Perícia Judicial</a>
+      <a href="https://wa.me/5548988666778?text=Olá, gostaria de informações sobre o livro." target="_blank">Informações sobre o livro</a>
       <a href="https://wa.me/5548988666778?text=Olá, tenho outro assunto." target="_blank">Outro assunto</a>
     </div>
     <div class="float-button" onclick="toggleMenu()">
