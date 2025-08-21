@@ -120,7 +120,7 @@
             text-align: center;
             transition: transform 0.3s;
             width: 100%;
-            max-width: 300px; /* Garante que os itens não fiquem muito largos */
+            max-width: 300px;
             box-sizing: border-box;
         }
 
@@ -129,9 +129,8 @@
         }
 
         .gallery-item img {
-            max-width: 100%;
+            max-width: 80px;
             height: auto;
-            border-radius: 6px;
             margin-bottom: 15px;
         }
 
@@ -139,6 +138,25 @@
             color: #0a2a43;
             font-size: 1.2em;
             margin: 0 0 10px 0;
+        }
+
+        /* Estilos da Seção de Contato com Ícones */
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-icons a {
+            color: #0a2a43;
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-icons a:hover {
+            color: #d4af37;
         }
 
         /* Estilos do Novo Botão e Menu Flutuantes */
@@ -236,22 +254,22 @@
         <h2>Serviços de Avaliação e Consultoria</h2>
         <div class="gallery">
             <div class="gallery-item">
-                <img src="Compra e Venda.png" alt="Icone de Compra e Venda">
+                <img src="Compra e Venda.png" alt="Ícone de Compra e Venda">
                 <h4>Compra e Venda</h4>
                 <p>Definição justa de valor de mercado para negociações, garantindo segurança para ambas as partes.</p>
             </div>
             <div class="gallery-item">
-                <img src="Processos Judiciais.png" alt="Icone de Processos Judiciais">
+                <img src="Processos Judiciais.png" alt="Ícone de Processos Judiciais">
                 <h4>Processos Judiciais</h4>
                 <p>Laudos para inventários, usucapião, divórcios, dissoluções societárias e outros litígios.</p>
             </div>
             <div class="gallery-item">
-                <img src="Financiamento.png" alt="Icone de Financiamento">
+                <img src="Financiamento.png" alt="Ícone de Financiamento">
                 <h4>Financiamentos</h4>
                 <p>Avaliações para garantias bancárias e crédito imobiliário, atendendo aos requisitos das instituições.</p>
             </div>
             <div class="gallery-item">
-                <img src="Negocios Estrategicos.png" alt="Icone de Negócios Estratégicos">
+                <img src="Negocios Estrategicos.png" alt="Ícone de Negócios Estratégicos">
                 <h4>Negócios Estratégicos</h4>
                 <p>Assessoria em negociações complexas, built to suit, permutas e estruturação de projetos.</p>
             </div>
@@ -290,13 +308,19 @@
         <h2>Meu Livro</h2>
         <img src="livro_capa_paginas.png" alt="Capa do livro" style="max-width: 250px; display: block; margin: 0 auto 20px;">
         <p>Conheça meu livro "Perícia Imobiliária", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
-        <a href="#" target="_blank" style="display: block; text-align: center;">Comprar na Amazon</a>
+        <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" style="display: block; text-align: center;">Comprar na Amazon</a>
     </section>
 
     <section id="contato">
         <h2>Contato</h2>
         <p>Email: <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">andreiabraz.periciaimobiliaria@gmail.com</a></p>
         <p>Telefone: <a href="tel:+5548988666778">(48) 98866-6778</a></p>
+        <div class="contact-icons">
+            <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/andr%C3%A9ia-br%C3%A1z-9b809b6a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/5548988666778?text=Olá, gostaria de entrar em contato." target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
     </section>
 
     <footer>
