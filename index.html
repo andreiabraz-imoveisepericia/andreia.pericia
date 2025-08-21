@@ -120,7 +120,7 @@
             text-align: center;
             transition: transform 0.3s;
             width: 100%;
-            max-width: 300px;
+            max-width: 350px;
             box-sizing: border-box;
             display: flex;
             flex-direction: column;
@@ -131,17 +131,36 @@
             transform: translateY(-5px);
         }
 
-        .gallery-item img {
-            max-width: 80px;
-            height: auto;
-            margin-bottom: 15px;
-        }
-
-        .gallery-item h4 {
+        /* Novo estilo para a seção de serviços (sem imagens) */
+        #servicos .gallery-item h4 {
             color: #0a2a43;
             font-size: 1.2em;
-            margin: 10px 0 10px 0;
+            margin: 10px 0;
             text-align: center;
+            background: #d4af37;
+            color: #0a2a43;
+            padding: 10px 15px;
+            border-radius: 6px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        #servicos .gallery-item p {
+            margin-top: 15px;
+            text-align: center;
+            max-width: 100%;
+        }
+
+        /* Estilo para a galeria de Áreas de Atuação (com imagens grandes) */
+        #atuacao .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+        
+        #atuacao .gallery-item h4 {
+            margin-top: 15px;
         }
 
         /* Estilos da Seção de Contato com Ícones */
@@ -226,6 +245,12 @@
         .menu-popup a:hover {
             background: #1ebd5a;
         }
+
+        /* Estilo para o ícone "Comprar na Amazon" */
+        .amazon-icon {
+            font-size: 20px;
+            margin-left: 5px;
+        }
     </style>
 </head>
 <body>
@@ -258,22 +283,18 @@
         <h2>Serviços de Avaliação e Consultoria</h2>
         <div class="gallery">
             <div class="gallery-item">
-                <img src="Compra e Venda.png" alt="Ícone de Compra e Venda">
                 <h4>Compra e Venda</h4>
                 <p>Definição justa de valor de mercado para negociações, garantindo segurança para ambas as partes.</p>
             </div>
             <div class="gallery-item">
-                <img src="Processos Judiciais.png" alt="Ícone de Processos Judiciais">
                 <h4>Processos Judiciais</h4>
                 <p>Laudos para inventários, usucapião, divórcios, dissoluções societárias e outros litígios.</p>
             </div>
             <div class="gallery-item">
-                <img src="Financiamento.png" alt="Ícone de Financiamento">
                 <h4>Financiamentos</h4>
                 <p>Avaliações para garantias bancárias e crédito imobiliário, atendendo aos requisitos das instituições.</p>
             </div>
             <div class="gallery-item">
-                <img src="Negocios Estrategicos.png" alt="Ícone de Negócios Estratégicos">
                 <h4>Negócios Estratégicos</h4>
                 <p>Assessoria em negociações complexas, built to suit, permutas e estruturação de projetos.</p>
             </div>
@@ -288,22 +309,18 @@
             <div class="gallery-item">
                 <img src="loteamento.png" alt="Imagem de loteamento">
                 <h4>Loteamentos</h4>
-                <p>Especialista em análise de potencial construtivo e valor de mercado para áreas de loteamento, garantindo o melhor retorno para seu investimento.</p>
             </div>
             <div class="gallery-item">
                 <img src="predios.png" alt="Imagem de prédios">
                 <h4>Prédios</h4>
-                <p>Avaliação de prédios residenciais e comerciais, novos ou usados, para compra, venda, inventário ou garantia bancária.</p>
             </div>
             <div class="gallery-item">
                 <img src="centro de distribuicao.png" alt="Imagem de centro de distribuição">
                 <h4>Centros de Distribuição</h4>
-                <p>Perícia técnica e avaliação de centros logísticos, galpões e grandes áreas comerciais e industriais.</p>
             </div>
             <div class="gallery-item">
                 <img src="reuniao de negocios.png" alt="Imagem de reunião de negócios">
                 <h4>Negócios Estratégicos</h4>
-                <p>Assessoria em negociações complexas, built to suit, permutas e estruturação de projetos.</p>
             </div>
         </div>
     </section>
@@ -311,14 +328,13 @@
     <section id="livro">
         <h2>Meu Livro</h2>
         <img src="livro_capa_paginas.png" alt="Capa do livro" style="max-width: 250px; display: block; margin: 0 auto 20px;">
-        <p>Conheça meu livro "Perícia Imobiliária", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
-        <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" style="display: block; text-align: center;">Comprar na Amazon</a>
+        <p>Conheça meu livro "A LEVEZA DA TRANSFORMAÇÃO ", um guia completo para quem busca UM SIGNIFICADO DE VIDA. Disponível para compra na Amazon.</p>
+        <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" style="display: block; text-align: center;">Comprar na Amazon <i class="fa-solid fa-hand-point-right amazon-icon"></i></a>
     </section>
 
     <section id="contato">
         <h2>Contato</h2>
-        <p>Email: <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com">andreiabraz.periciaimobiliaria@gmail.com</a></p>
-        <p>Telefone: <a href="tel:+5548988666778">(48) 98866-6778</a></p>
+        
         <div class="contact-icons">
             <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/andr%C3%A9ia-br%C3%A1z-9b809b6a/" target="_blank"><i class="fab fa-linkedin"></i></a>
