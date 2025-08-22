@@ -46,12 +46,12 @@
             color: #0a2a43;
             border: 1px solid #d4af37;
         }
-        
+
         section {
             padding: 60px 20px;
             text-align: left;
         }
-        
+
         section#inicio, footer {
             text-align: center;
         }
@@ -69,13 +69,13 @@
             margin-bottom: 20px;
             text-align: center;
         }
-        
+
         h3 {
             color: #0a2a43;
             text-align: left;
             margin-top: 2rem;
         }
-        
+
         section p {
             max-width: 900px;
             margin: 20px auto;
@@ -89,7 +89,7 @@
             margin: 20px auto;
             text-align: left;
         }
-        
+
         ul li {
             margin-bottom: 10px;
         }
@@ -101,7 +101,7 @@
             padding: 15px;
             margin-top: 40px;
         }
-        
+
         /* Estilo para as galerias */
         .gallery {
             display: grid;
@@ -131,36 +131,53 @@
             transform: translateY(-5px);
         }
 
-        /* Estilo para a seção de serviços (sem imagens) */
+        /* Estilo para a seção de serviços (botões discretos) */
         #servicos .gallery-item h4 {
-            color: #0a2a43;
-            font-size: 1.2em;
-            margin: 10px 0;
+            color: #fff;
+            font-size: 1.1em;
+            margin: 10px auto;
             text-align: center;
-            background: #d4af37;
-            color: #0a2a43;
+            background: #2c698d;
             padding: 10px 15px;
             border-radius: 6px;
-            width: 100%;
+            width: 80%;
             box-sizing: border-box;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #servicos .gallery-item h4:hover {
+            background-color: #1e4a62;
         }
 
         #servicos .gallery-item p {
             margin-top: 15px;
             text-align: center;
             max-width: 100%;
+            font-size: 0.95em;
+            color: #555;
         }
 
-        /* Estilo para a galeria de Áreas de Atuação (com imagens grandes) */
+        /* Estilo para a galeria de Áreas de Atuação (com imagens grandes e textos) */
         #atuacao .gallery-item img {
             max-width: 100%;
             height: auto;
             border-radius: 6px;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
         }
-        
+
         #atuacao .gallery-item h4 {
-            margin-top: 15px;
+            margin-top: 10px;
+            color: #0a2a43;
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        #atuacao .gallery-item p {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
         }
 
         /* Estilos da Seção de Contato com Ícones */
@@ -222,13 +239,13 @@
             flex-direction: column;
             margin-bottom: 15px;
         }
-        
+
         .menu-popup h4 {
             margin: 0 0 10px 0;
             color: #333;
             text-align: center;
         }
-        
+
         .menu-popup a {
             display: block;
             background: #25d366;
@@ -241,7 +258,7 @@
             text-align: center;
             transition: background 0.3s;
         }
-        
+
         .menu-popup a:hover {
             background: #1ebd5a;
         }
@@ -250,6 +267,32 @@
         .amazon-icon {
             font-size: 20px;
             margin-left: 5px;
+        }
+
+        /* Estilos para a seção de Prospecção de Áreas Estratégicas */
+        #prospeccao {
+            text-align: left;
+        }
+
+        #prospeccao h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #prospeccao h3 {
+            color: #0a2a43;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        #prospeccao ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        #prospeccao .porque-escolher {
+            margin-top: 30px;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -264,6 +307,7 @@
             <a href="#sobre">Sobre Mim</a>
             <a href="#servicos">Serviços</a>
             <a href="#atuacao">Áreas de Atuação</a>
+            <a href="#prospeccao">Prospecção de Áreas</a>
             <a href="#contato">Contato</a>
         </nav>
     </header>
@@ -278,7 +322,7 @@
         <p>Atuo como Perita Avaliadora Judicial em Santa Catarina, elaborando laudos técnicos para processos judiciais e extrajudiciais. Minha experiência abrange imóveis residenciais, comerciais e áreas urbanas, garantindo análises precisas, imparciais e fundamentadas em normas da ABNT e metodologias reconhecidas.</p>
         <p>Sou Andréia Maria Bráz, perita judicial imobiliária com experiência em avaliação de imóveis urbanos e rurais. Atuei em imobiliárias renomadas como Gralha Imóveis e Supervisão Imóveis. Possuo CRECI PF e PJ, CNAI, certificações pelo IBREP e COFECI, além de experiência com perícias em diferentes comarcas de Santa Catarina e Paraná.</p>
     </section>
-    
+
     <section id="servicos">
         <h2>Serviços de Avaliação e Consultoria</h2>
         <div class="gallery">
@@ -308,21 +352,60 @@
         <div class="gallery">
             <div class="gallery-item">
                 <img src="loteamento.png" alt="Imagem de loteamento">
-                <h4>Loteamentos</h4>
+                <h4>Loteamento Residencial</h4>
+                <p>Áreas para novos bairros planejados, com viabilidade e estudos técnicos.</p>
             </div>
             <div class="gallery-item">
                 <img src="predios.png" alt="Imagem de prédios">
-                <h4>Prédios</h4>
+                <h4>Empreendimento Vertical</h4>
+                <p>Edifícios residenciais e mistos em regiões estratégicas e consolidadas.</p>
             </div>
             <div class="gallery-item">
                 <img src="centro de distribuicao.png" alt="Imagem de centro de distribuição">
-                <h4>Centros de Distribuição</h4>
+                <h4>Centro de Distribuição</h4>
+                <p>Áreas para logística e expansão empresarial, com acesso e zoneamento adequados.</p>
             </div>
             <div class="gallery-item">
                 <img src="reuniao de negocios.png" alt="Imagem de reunião de negócios">
-                <h4>Negócios Estratégicos</h4>
+                <h4>Reunião de Negócios</h4>
+                <p>Atendimento consultivo com discrição e foco no objetivo do cliente.</p>
             </div>
         </div>
+    </section>
+
+    <section id="prospeccao">
+        <h2>Prospecção de Áreas Estratégicas</h2>
+        <p>Além da atuação pericial, ofereço assessoria para identificação e análise de áreas e glebas destinadas a diferentes finalidades, com rigor técnico, total sigilo (termo de confidencialidade) e respaldo documental.</p>
+
+        <h3>Para quem é</h3>
+        <ul>
+            <li>Construtoras, incorporadoras e fundos de investimento</li>
+            <li>Empresas em expansão (logística/industrial) e centros de distribuição</li>
+            <li>Pessoas físicas com alta complexidade patrimonial</li>
+        </ul>
+
+        <h3>Serviços incluídos</h3>
+        <ul>
+            <li>Identificação de áreas para loteamentos, condomínios horizontais, empreendimentos mistos e verticais</li>
+            <li>Localização de glebas para expansão empresarial, centros logísticos e industriais</li>
+            <li>Análise técnica com entrega de arquivos em KMZ (georreferenciamento)</li>
+            <li>Elaboração de carta de apresentação e dossiê técnico do imóvel</li>
+            <li>Modelagens de pagamento</li>
+            <li>Built to Suit (construção sob medida)</li>
+            <li>Permuta física ou financeira</li>
+            <li>Aportes e estruturação de parcerias</li>
+            <li>Estruturação financeira personalizada</li>
+        </ul>
+
+        <p class="resultado">**Resultado:** segurança, discrição e credibilidade em todas as etapas da negociação.</p>
+
+        <h3>Por que me escolher?</h3>
+        <ul>
+            <li>✔ Experiência em perícia judicial e avaliações</li>
+            <li>✔ Atuação em diversas cidades de SC</li>
+            <li>✔ Registro no CRECI e CNAI</li>
+            <li>✔ Atendimento profissional com sigilo e transparência</li>
+        </ul>
     </section>
 
     <section id="livro">
