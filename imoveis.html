@@ -8,121 +8,99 @@
   <style>
     body { font-family: Arial, sans-serif; margin: 0; background: #f4f6f9; }
     header { background: #0a2a43; color: #fff; padding: 20px; text-align: center; }
-    header h1 { margin: 0; font-size: 26px; }
     nav { margin-top: 10px; }
-    nav a { background: #d4af37; color: #000; padding: 10px 15px; margin: 5px; border-radius: 5px; text-decoration: none; font-weight: bold; }
-    nav a:hover { background: #b8962e; }
-
-    .container { padding: 30px; }
-    h2 { text-align: center; margin-bottom: 20px; color: #0a2a43; }
-
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 20px;
+    nav a {
+      background: #d4af37;
+      color: #0a2a43;
+      text-decoration: none;
+      margin: 5px;
+      padding: 8px 15px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.3s;
     }
-
+    nav a:hover { background: #fff; color: #0a2a43; }
+    .aviso {
+      background: #fff3cd;
+      color: #856404;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      border-bottom: 2px solid #ffeeba;
+    }
+    h2 { text-align: center; margin: 30px 0; color: #0a2a43; }
+    .container { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; padding: 20px; }
     .card {
       background: #fff;
       border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.2s;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      transition: transform 0.3s;
     }
-    .card:hover { transform: scale(1.03); }
-
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .card-content { padding: 15px; }
-    .card-content h3 { margin: 0 0 10px; color: #0a2a43; }
-    .card-content p { font-size: 14px; color: #555; }
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
+    .card:hover { transform: translateY(-5px); }
+    .card img { width: 100%; height: 180px; object-fit: cover; }
+    .card h3 { margin: 10px; color: #0a2a43; }
+    .card p { margin: 10px; color: #555; }
+    .card button {
+      margin: 10px;
+      padding: 10px;
       background: #0a2a43;
       color: #fff;
-      padding: 8px 12px;
+      border: none;
       border-radius: 5px;
-      text-decoration: none;
-      font-size: 14px;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-    .btn:hover { background: #08304f; }
+    .card button:hover { background: #d4af37; color: #0a2a43; }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Imóveis Disponíveis</h1>
     <nav>
       <a href="index.html">Início</a>
-      <a href="laudos.html">Laudos</a>
-      <a href="livro.html">Livro</a>
+      <a href="imoveis.html">Imóveis</a>
+      <a href="servicos.html">Serviços</a>
       <a href="contato.html">Contato</a>
     </nav>
   </header>
 
+  <div class="aviso">
+    🔔 Esta página está em construção. As imagens abaixo são ilustrativas.
+  </div>
+
+  <h2>Conheça alguns imóveis</h2>
+
   <div class="container">
-    <h2>Conheça alguns imóveis</h2>
-    <div class="grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="Casa Residencial">
+      <h3>Casa Residencial</h3>
+      <p>Bela casa em bairro tranquilo, com 3 quartos, garagem e quintal amplo.</p>
+      <button>Saiba Mais</button>
+    </div>
 
-      <div class="card">
-        <img src="https://picsum.photos/400/250?random=1" alt="Casa 1">
-        <div class="card-content">
-          <h3>Casa Residencial</h3>
-          <p>Bela casa em bairro tranquilo, 3 quartos, garagem e quintal amplo.</p>
-          <a href="#" class="btn">Saiba Mais</a>
-        </div>
-      </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1507089947368-19c1da9775ae" alt="Apartamento Moderno">
+      <h3>Apartamento Moderno</h3>
+      <p>Apartamento com vista panorâmica, 2 quartos e ótima localização.</p>
+      <button>Saiba Mais</button>
+    </div>
 
-      <div class="card">
-        <img src="https://picsum.photos/400/250?random=2" alt="Apartamento">
-        <div class="card-content">
-          <h3>Apartamento Moderno</h3>
-          <p>Apartamento com vista panorâmica, 2 quartos e ótima localização.</p>
-          <a href="#" class="btn">Saiba Mais</a>
-        </div>
-      </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1505691938895-1758d7feb511" alt="Cobertura Luxuosa">
+      <h3>Cobertura Luxuosa</h3>
+      <p>Cobertura duplex com piscina privativa e acabamento de alto padrão.</p>
+      <button>Saiba Mais</button>
+    </div>
 
-      <div class="card">
-        <img src="https://picsum.photos/400/250?random=3" alt="Cobertura">
-        <div class="card-content">
-          <h3>Cobertura Luxuosa</h3>
-          <p>Cobertura duplex com piscina privativa e acabamento de alto padrão.</p>
-          <a href="#" class="btn">Saiba Mais</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://picsum.photos/400/250?random=4" alt="Terreno">
-        <div class="card-content">
-          <h3>Terreno Amplo</h3>
-          <p>Terreno 600m², plano e pronto para construção residencial.</p>
-          <a href="#" class="btn">Saiba Mais</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://picsum.photos/400/250?random=5" alt="Sítio">
-        <div class="card-content">
-          <h3>Sítio Aconchegante</h3>
-          <p>Área rural com lago, pomar e casa de campo charmosa.</p>
-          <a href="#" class="btn">Saiba Mais</a>
-        </div>
-      </div>
-
-      <div class="card">
-        <img src="https://picsum.photos/400/250?random=6" alt="Sala Comercial">
-        <div class="card-content">
-          <h3>Sala Comercial</h3>
-          <p>Espaço moderno para escritórios no centro da cidade.</p>
-          <a href="#" class="btn">Saiba Mais</a>
-        </div>
-      </div>
-
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914" alt="Terreno Amplo">
+      <h3>Terreno Amplo</h3>
+      <p>Terreno 600m², plano e pronto para construção residencial.</p>
+      <button>Saiba Mais</button>
     </div>
   </div>
+
 </body>
 </html>
