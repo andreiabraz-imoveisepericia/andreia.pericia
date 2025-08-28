@@ -9,24 +9,26 @@
     
     <style>
         :root {
-            --cor-principal: #2c445c; /* Azul escuro do modelo */
-            --cor-destaque: #d4af37; /* Dourado */
+            --cor-principal: #2c445c;
+            --cor-destaque: #d4af37;
             --cor-fundo: #f4f6f9;
             --cor-texto: #333;
             --cor-clara: #fff;
         }
 
+        /* Aplica o fundo fixo no corpo da página */
         body {
             margin: 0;
             font-family: 'Arial', sans-serif;
-            background: var(--cor-fundo);
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagens/1.jpg') no-repeat center center;
+            background-size: cover;
+            background-attachment: fixed; /* Este é o truque */
             color: var(--cor-texto);
             scroll-behavior: smooth;
         }
 
-        /* Seção do topo com imagem de fundo flutuante (paralaxe) */
+        /* Seção do topo com conteúdo */
         .hero {
-            position: relative;
             height: 100vh;
             width: 100%;
             display: flex;
@@ -35,31 +37,10 @@
             align-items: center;
             text-align: center;
             color: var(--cor-clara);
-            z-index: 1;
             padding: 20px;
-            overflow: hidden; /* Garante que a imagem não vaze */
-        }
-
-        /* Div da imagem de fundo para o efeito de paralaxe */
-        .parallax-bg {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('imagens/1.jpg') no-repeat center center;
-            background-size: cover;
-            z-index: -1; /* Coloca a imagem atrás do conteúdo */
-        }
-        
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5); /* Escurece a imagem */
-            z-index: -1;
+            /* Garante que o conteúdo fique por cima da imagem */
+            position: relative;
+            z-index: 2;
         }
 
         .hero h1 {
@@ -88,12 +69,6 @@
             z-index: 10;
         }
 
-        .top-nav .logo img {
-            max-width: 150px;
-            height: auto;
-            display: none;
-        }
-        
         .top-nav nav a {
             color: var(--cor-clara);
             text-decoration: none;
@@ -110,6 +85,17 @@
         section {
             padding: 60px 40px;
             text-align: left;
+            background: var(--cor-fundo); /* Fundo para as seções */
+            position: relative; /* Para garantir que o fundo do corpo não apareça por trás */
+        }
+
+        section:nth-child(even) {
+            background: #fff;
+        }
+        
+        /* Adicionado um espaçador para o conteúdo não ficar por baixo do menu */
+        main {
+            padding-top: 60px; /* Ajuste para o tamanho do menu */
         }
 
         h2, h3 {
@@ -122,14 +108,6 @@
             max-width: 900px;
             margin: 20px auto;
             text-align: justify;
-        }
-        
-        section:nth-child(even) {
-            background: #fff;
-        }
-
-        section:nth-child(odd) {
-            background: var(--cor-fundo);
         }
 
         ul {
@@ -368,132 +346,132 @@
         </nav>
     </div>
 
-    <header class="hero" id="inicio">
-        <div class="parallax-bg" id="hero-bg"></div>
-        <div class="hero-overlay"></div>
-        <h1>Andréia Maria Bráz</h1>
-        <p>Corretora e Avaliadora de Imóveis | Perita Judicial</p>
-        <p>CRECI-SC 64512 F | CRECI-SC 10036J | CNAI 53914</p>
-    </header>
+    <main>
+        <header class="hero" id="inicio">
+            <h1>Andréia Maria Bráz</h1>
+            <p>Corretora e Avaliadora de Imóveis | Perita Judicial</p>
+            <p>CRECI-SC 64512 F | CRECI-SC 10036J | CNAI 53914</p>
+        </header>
 
-    <section id="sobre">
-        <h2>Sobre Mim</h2>
-        <p>
-            Sou <strong>Andréia Maria Bráz</strong>, especialista em imóveis de alto padrão, áreas para loteamentos e perícia imobiliária judicial em Santa Catarina.
-            Atuo como <strong>Perita Avaliadora Judicial</strong>, elaborando laudos técnicos para processos judiciais e extrajudiciais, sempre de forma precisa, imparcial
-            e fundamentada nas normas da <strong>ABNT</strong> e metodologias reconhecidas nacionalmente.
-        </p>
-        <p>
-            Minha experiência abrange a avaliação de imóveis residenciais, comerciais, áreas urbanas e rurais, além de terrenos estratégicos para empreendimentos e expansão empresarial.
-            Já atuei em imobiliárias de referência como <strong>Gralha Imóveis</strong> e <strong>Supervisão Imóveis</strong>, consolidando expertise em negociações de alto padrão e em estudos de viabilidade de áreas.
-        </p>
-        <p>
-            Possuo <strong>CRECI PF e PJ</strong>, <strong>CNAI</strong>, certificações pelo <strong>IBREP</strong> e <strong>COFECI</strong>, além de atuação prática com perícias em diferentes comarcas de Santa Catarina e Paraná.
-            Essa trajetória me permite oferecer um trabalho sólido, confiável e ético, sempre com foco em resultados e segurança para clientes e parceiros.
-        </p>
-    </section>
-    
-    <section id="servicos">
-        <h2>Serviços de Avaliação e Consultoria</h2>
-        <div class="gallery">
-            <div class="gallery-item">
-                <h4>Compra e Venda</h4>
-                <p>Definição justa de valor de mercado para negociações, garantindo segurança para ambas as partes.</p>
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>
+                Sou <strong>Andréia Maria Bráz</strong>, especialista em imóveis de alto padrão, áreas para loteamentos e perícia imobiliária judicial em Santa Catarina.
+                Atuo como <strong>Perita Avaliadora Judicial</strong>, elaborando laudos técnicos para processos judiciais e extrajudiciais, sempre de forma precisa, imparcial
+                e fundamentada nas normas da <strong>ABNT</strong> e metodologias reconhecidas nacionalmente.
+            </p>
+            <p>
+                Minha experiência abrange a avaliação de imóveis residenciais, comerciais, áreas urbanas e rurais, além de terrenos estratégicos para empreendimentos e expansão empresarial.
+                Já atuei em imobiliárias de referência como <strong>Gralha Imóveis</strong> e <strong>Supervisão Imóveis</strong>, consolidando expertise em negociações de alto padrão e em estudos de viabilidade de áreas.
+            </p>
+            <p>
+                Possuo <strong>CRECI PF e PJ</strong>, <strong>CNAI</strong>, certificações pelo <strong>IBREP</strong> e <strong>COFECI</strong>, além de atuação prática com perícias em diferentes comarcas de Santa Catarina e Paraná.
+                Essa trajetória me permite oferecer um trabalho sólido, confiável e ético, sempre com foco em resultados e segurança para clientes e parceiros.
+            </p>
+        </section>
+        
+        <section id="servicos">
+            <h2>Serviços de Avaliação e Consultoria</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <h4>Compra e Venda</h4>
+                    <p>Definição justa de valor de mercado para negociações, garantindo segurança para ambas as partes.</p>
+                </div>
+                <div class="gallery-item">
+                    <h4>Processos Judiciais</h4>
+                    <p>Laudos para inventários, usucapião, divórcios, dissoluções societárias e outros litígios.</p>
+                </div>
+                <div class="gallery-item">
+                    <h4>Financiamentos</h4>
+                    <p>Avaliações para garantias bancárias e crédito imobiliário, atendendo aos requisitos das instituições.</p>
+                </div>
+                <div class="gallery-item">
+                    <h4>Negócios Estratégicos</h4>
+                    <p>Assessoria em negociações complexas, built to suit, permutas e estruturação de projetos.</p>
+                </div>
             </div>
-            <div class="gallery-item">
-                <h4>Processos Judiciais</h4>
-                <p>Laudos para inventários, usucapião, divórcios, dissoluções societárias e outros litígios.</p>
-            </div>
-            <div class="gallery-item">
-                <h4>Financiamentos</h4>
-                <p>Avaliações para garantias bancárias e crédito imobiliário, atendendo aos requisitos das instituições.</p>
-            </div>
-            <div class="gallery-item">
-                <h4>Negócios Estratégicos</h4>
-                <p>Assessoria em negociações complexas, built to suit, permutas e estruturação de projetos.</p>
-            </div>
-        </div>
-        <p>Uma avaliação bem elaborada dá segurança jurídica, evita conflitos e garante negociações mais justas e transparentes.</p>
-    </section>
+            <p>Uma avaliação bem elaborada dá segurança jurídica, evita conflitos e garante negociações mais justas e transparentes.</p>
+        </section>
 
-    <section id="atuacao">
-        <h2>Áreas de Atuação</h2>
-        <p>Confira algumas das áreas de atuação e especialidades dos serviços de avaliação e consultoria que oferecemos:</p>
-        <div class="gallery">
-            <div class="gallery-item">
-                <img src="imagens/loteamento.png" alt="Imagem de loteamento">
-                <h4>Loteamento Residencial</h4>
-                <p>Áreas para novos bairros planejados, com viabilidade e estudos técnicos.</p>
+        <section id="atuacao">
+            <h2>Áreas de Atuação</h2>
+            <p>Confira algumas das áreas de atuação e especialidades dos serviços de avaliação e consultoria que oferecemos:</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="imagens/loteamento.png" alt="Imagem de loteamento">
+                    <h4>Loteamento Residencial</h4>
+                    <p>Áreas para novos bairros planejados, com viabilidade e estudos técnicos.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="imagens/predios.png" alt="Imagem de prédios">
+                    <h4>Empreendimento Vertical</h4>
+                    <p>Edifícios residenciais e mistos em regiões estratégicas e consolidadas.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="imagens/centro de distribuicao.png" alt="Imagem de centro de distribuição">
+                    <h4>Centro de Distribuição</h4>
+                    <p>Áreas para logística e expansão empresarial, com acesso e zoneamento adequados.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="imagens/reuniao de negocios.png" alt="Imagem de reunião de negócios">
+                    <h4>Reunião de Negócios</h4>
+                    <p>Atendimento consultivo com discrição e foco no objetivo do cliente.</p>
+                </div>
             </div>
-            <div class="gallery-item">
-                <img src="imagens/predios.png" alt="Imagem de prédios">
-                <h4>Empreendimento Vertical</h4>
-                <p>Edifícios residenciais e mistos em regiões estratégicas e consolidadas.</p>
-            </div>
-            <div class="gallery-item">
-                <img src="imagens/centro de distribuicao.png" alt="Imagem de centro de distribuição">
-                <h4>Centro de Distribuição</h4>
-                <p>Áreas para logística e expansão empresarial, com acesso e zoneamento adequados.</p>
-            </div>
-            <div class="gallery-item">
-                <img src="imagens/reuniao de negocios.png" alt="Imagem de reunião de negócios">
-                <h4>Reunião de Negócios</h4>
-                <p>Atendimento consultivo com discrição e foco no objetivo do cliente.</p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <section id="prospeccao">
-        <h2>Prospecção de Áreas Estratégicas</h2>
-        <p>Além da atuação pericial, ofereço assessoria para identificação e análise de áreas e glebas destinadas a diferentes finalidades, com rigor técnico, total sigilo (termo de confidencialidade) e respaldo documental.</p>
-    
-        <h3>Para quem é</h3>
-        <ul>
-            <li>Construtoras, incorporadoras e fundos de investimento</li>
-            <li>Empresas em expansão (logística/industrial) e centros de distribuição</li>
-            <li>Pessoas físicas com alta complexidade patrimonial</li>
-        </ul>
-    
-        <h3>Serviços incluídos</h3>
-        <ul>
-            <li>Identificação de áreas para loteamentos, condomínios horizontais, empreendimentos mistos e verticais</li>
-            <li>Localização de glebas para expansão empresarial, centros logísticos e industriais</li>
-            <li>Análise técnica com entrega de arquivos em KMZ (georreferenciamento)</li>
-            <li>Elaboração de carta de apresentação e dossiê técnico do imóvel</li>
-            <li>Modelagens de pagamento</li>
-            <li>Built to Suit (construção sob medida)</li>
-            <li>Permuta física ou financeira</li>
-            <li>Aportes e estruturação de parcerias</li>
-            <li>Estruturação financeira personalizada</li>
-        </ul>
-    
-        <p class="resultado">**Resultado:** segurança, discrição e credibilidade em todas as etapas da negociação.</p>
-    
-        <h3>Por que me escolher?</h3>
-        <ul>
-            <li>✔ Experiência em perícia judicial e avaliações</li>
-            <li>✔ Atuação em diversas cidades de SC</li>
-            <li>✔ Registro no CRECI e CNAI</li>
-            <li>✔ Atendimento profissional com sigilo e transparência</li>
-        </ul>
-    </section>
+        <section id="prospeccao">
+            <h2>Prospecção de Áreas Estratégicas</h2>
+            <p>Além da atuação pericial, ofereço assessoria para identificação e análise de áreas e glebas destinadas a diferentes finalidades, com rigor técnico, total sigilo (termo de confidencialidade) e respaldo documental.</p>
+        
+            <h3>Para quem é</h3>
+            <ul>
+                <li>Construtoras, incorporadoras e fundos de investimento</li>
+                <li>Empresas em expansão (logística/industrial) e centros de distribuição</li>
+                <li>Pessoas físicas com alta complexidade patrimonial</li>
+            </ul>
+        
+            <h3>Serviços incluídos</h3>
+            <ul>
+                <li>Identificação de áreas para loteamentos, condomínios horizontais, empreendimentos mistos e verticais</li>
+                <li>Localização de glebas para expansão empresarial, centros logísticos e industriais</li>
+                <li>Análise técnica com entrega de arquivos em KMZ (georreferenciamento)</li>
+                <li>Elaboração de carta de apresentação e dossiê técnico do imóvel</li>
+                <li>Modelagens de pagamento</li>
+                <li>Built to Suit (construção sob medida)</li>
+                <li>Permuta física ou financeira</li>
+                <li>Aportes e estruturação de parcerias</li>
+                <li>Estruturação financeira personalizada</li>
+            </ul>
+        
+            <p class="resultado">**Resultado:** segurança, discrição e credibilidade em todas as etapas da negociação.</p>
+        
+            <h3>Por que me escolher?</h3>
+            <ul>
+                <li>✔ Experiência em perícia judicial e avaliações</li>
+                <li>✔ Atuação em diversas cidades de SC</li>
+                <li>✔ Registro no CRECI e CNAI</li>
+                <li>✔ Atendimento profissional com sigilo e transparência</li>
+            </ul>
+        </section>
 
-    <section id="livro">
-        <h2>Meu Livro</h2>
-        <img src="imagens/livro_capa_paginas.png" alt="Capa do livro" style="max-width: 250px; display: block; margin: 0 auto 20px;">
-        <p>Conheça meu livro "A Leveza da Transformação", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
-        <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" style="display: block; text-align: center;">Comprar na Amazon <i class="fa-solid fa-hand-point-right amazon-icon"></i></a>
-    </section>
+        <section id="livro">
+            <h2>Meu Livro</h2>
+            <img src="imagens/livro_capa_paginas.png" alt="Capa do livro" style="max-width: 250px; display: block; margin: 0 auto 20px;">
+            <p>Conheça meu livro "A Leveza da Transformação", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
+            <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" style="display: block; text-align: center;">Comprar na Amazon <i class="fa-solid fa-hand-point-right amazon-icon"></i></a>
+        </section>
 
-    <section id="contato">
-        <h2>Contato</h2>
-        <div class="contact-icons">
-            <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.linkedin.com/in/andr%C3%A9ia-br%C3%A1z-9b809b6a/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://wa.me/5548988666778?text=Olá, gostaria de entrar em contato." target="_blank"><i class="fab fa-whatsapp"></i></a>
-        </div>
-    </section>
+        <section id="contato">
+            <h2>Contato</h2>
+            <div class="contact-icons">
+                <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/andr%C3%A9ia-br%C3%A1z-9b809b6a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/5548988666778?text=Olá, gostaria de entrar em contato." target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+    </main>
 
     <footer>
         <p>📞 (48) 98866-6778</p>
@@ -525,15 +503,6 @@
                 menu.style.display = 'flex';
             }
         }
-        
-        // Novo script para o efeito de paralaxe
-        window.addEventListener('scroll', function() {
-            const parallax = document.getElementById('hero-bg');
-            let scrollPosition = window.pageYOffset;
-            
-            // A velocidade do efeito. 0.5 significa que a imagem se move 50% mais devagar que a rolagem.
-            parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
-        });
     </script>
 </body>
 </html>
