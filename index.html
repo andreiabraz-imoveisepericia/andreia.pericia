@@ -24,9 +24,11 @@
             scroll-behavior: smooth;
         }
 
-        /* Seção do topo com imagem de fundo flutuante */
+        /* Seção do topo com imagem de fundo flutuante (paralaxe) */
         .hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagens/1.jpg') no-repeat center center/cover;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagens/1.jpg') no-repeat center center;
+            background-size: cover; /* Garante que a imagem cubra toda a área */
+            background-attachment: fixed; /* ESSA LINHA CRIA O EFEITO PARALAXE */
             height: 100vh;
             color: var(--cor-clara);
             display: flex;
@@ -62,6 +64,7 @@
             justify-content: space-between;
             align-items: center;
             box-sizing: border-box;
+            z-index: 10; /* Garante que o menu fique acima da imagem */
         }
 
         .top-nav .logo img {
@@ -335,8 +338,7 @@
 
     <div class="top-nav">
         <div class="logo">
-            <a href="#inicio"><img src="imagens/1.jpg" alt="Logo Andréia Maria Bráz"></a>
-        </div>
+            </div>
         <nav>
             <a href="#inicio">Início</a>
             <a href="imoveis.html">Imóveis</a>
@@ -350,7 +352,7 @@
 
     <header class="hero" id="inicio">
         <h1>Andréia Maria Bráz</h1>
-        <p> Corretora e Avaliadora de Imóveis | Perita Judicial | CRECI-SC 64512 F 10036 J| CNAI 53914</p>
+        <p> Corretora e Avaliadora de Imóveis | Perita Judicial | CRECI-SC 64512 F 10036 J | CNAI 53914</p>
     </header>
 
     <section id="sobre">
@@ -473,8 +475,7 @@
     </section>
 
     <footer>
-        <p>📞 (48) 98866-6778</p>
-        <p>✉ andreiabraz.periciaimobiliaria@gmail.com</p>
+        
         <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados</p>
     </footer>
 
