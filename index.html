@@ -26,21 +26,40 @@
 
         /* Seção do topo com imagem de fundo flutuante (paralaxe) */
         .hero {
-            /* Alterado para o caminho relativo correto */
-            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagens/1.jpg') no-repeat center center;
-            background-size: cover;
-            background-attachment: fixed;
+            position: relative;
             height: 100vh;
             width: 100%;
-            color: var(--cor-clara);
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
             text-align: center;
-            position: relative;
+            color: var(--cor-clara);
             z-index: 1;
             padding: 20px;
+            overflow: hidden; /* Garante que a imagem não vaze */
+        }
+
+        /* Div da imagem de fundo para o efeito de paralaxe */
+        .parallax-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('imagens/1.jpg') no-repeat center center;
+            background-size: cover;
+            z-index: -1; /* Coloca a imagem atrás do conteúdo */
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Escurece a imagem */
+            z-index: -1;
         }
 
         .hero h1 {
@@ -350,6 +369,8 @@
     </div>
 
     <header class="hero" id="inicio">
+        <div class="parallax-bg" id="hero-bg"></div>
+        <div class="hero-overlay"></div>
         <h1>Andréia Maria Bráz</h1>
         <p>Corretora e Avaliadora de Imóveis | Perita Judicial</p>
         <p>CRECI-SC 64512 F | CRECI-SC 10036J | CNAI 53914</p>
@@ -475,7 +496,9 @@
     </section>
 
     <footer>
-               <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados</p>
+        <p>📞 (48) 98866-6778</p>
+        <p>✉ andreiabraz.periciaimobiliaria@gmail.com</p>
+        <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados</p>
     </footer>
 
     <div class="float-container">
@@ -502,6 +525,15 @@
                 menu.style.display = 'flex';
             }
         }
+        
+        // Novo script para o efeito de paralaxe
+        window.addEventListener('scroll', function() {
+            const parallax = document.getElementById('hero-bg');
+            let scrollPosition = window.pageYOffset;
+            
+            // A velocidade do efeito. 0.5 significa que a imagem se move 50% mais devagar que a rolagem.
+            parallax.style.transform = 'translateY(' + scrollPosition * 0.5 + 'px)';
+        });
     </script>
 </body>
 </html>
