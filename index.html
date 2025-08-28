@@ -1,166 +1,550 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Andréia Maria Bráz - Imóveis e Perícia Imobiliária</title>
-  
-  <!-- Ícones -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andréia Maria Bráz - Imóveis e Perícia Imobiliária</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Fonte elegante -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cor-principal: #2c445c; /* Azul escuro do modelo */
+            --cor-destaque: #d4af37; /* Dourado */
+            --cor-fundo: #f4f6f9;
+            --cor-texto: #333;
+            --cor-clara: #fff;
+        }
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      scroll-behavior: smooth;
-    }
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: var(--cor-fundo);
+            color: var(--cor-texto);
+            scroll-behavior: smooth;
+            display: flex; /* Cria o layout de duas colunas */
+        }
+        
+        /* Estilo da barra lateral fixa */
+        .barra-lateral {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 100vh;
+            background: var(--cor-principal);
+            color: var(--cor-clara);
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            overflow-y: auto;
+        }
 
-    body {
-      font-family: 'Open Sans', sans-serif;
-      color: #333;
-      background-color: #fff;
-      line-height: 1.6;
-    }
+        .barra-lateral img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 8px; /* Opcional: para suavizar as bordas */
+        }
+        
+        .barra-lateral h1 {
+            color: var(--cor-clara);
+            margin: 0;
+            font-size: 1.8em;
+        }
 
-    header {
-      position: relative;
-      height: 100vh;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("240_F_640203660_wenCIEZQKF2Ngkk3sPv09NMjH56foij8.jpg") no-repeat center center/cover;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
+        .barra-lateral p {
+            font-size: 0.9em;
+            color: #ccc;
+            margin-top: 5px;
+        }
 
-    header h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
+        .barra-lateral nav {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 100%;
+            margin-top: 30px;
+        }
 
-    header p {
-      font-size: 1.2rem;
-    }
+        .barra-lateral nav a {
+            background: transparent;
+            color: var(--cor-clara);
+            padding: 10px 18px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 1px solid var(--cor-destaque);
+        }
 
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(255, 255, 255, 0.9);
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      padding: 15px 0;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-      z-index: 1000;
-    }
+        .barra-lateral nav a:hover {
+            background: var(--cor-destaque);
+            color: var(--cor-principal);
+        }
 
-    nav a {
-      color: #003366;
-      text-decoration: none;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
+        .conteudo-principal {
+            margin-left: 300px; /* Desloca o conteúdo principal para a direita */
+            width: 100%;
+            padding: 0;
+        }
+        
+        header {
+            background: var(--cor-principal);
+            color: var(--cor-clara);
+            padding: 20px;
+            text-align: center;
+            display: none; /* O header original será ocultado */
+        }
 
-    nav a:hover {
-      color: #0055aa;
-    }
+        section {
+            padding: 60px 40px;
+            text-align: left;
+        }
 
-    section {
-      padding: 80px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+        section#inicio, footer {
+            text-align: center;
+        }
 
-    section h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 20px;
-      color: #003366;
-      text-align: center;
-    }
+        section:nth-child(even) {
+            background: #fff;
+        }
 
-    .content {
-      text-align: center;
-      font-size: 1.1rem;
-    }
+        section:nth-child(odd) {
+            background: var(--cor-fundo);
+        }
 
-    footer {
-      background: #003366;
-      color: white;
-      text-align: center;
-      padding: 30px 20px;
-      margin-top: 40px;
-    }
+        h2 {
+            color: var(--cor-principal);
+            margin-bottom: 20px;
+            text-align: center;
+        }
 
-    footer a {
-      color: #fff;
-      margin: 0 10px;
-      font-size: 1.2rem;
-    }
-  </style>
+        h3 {
+            color: var(--cor-principal);
+            text-align: left;
+            margin-top: 2rem;
+        }
+
+        section p {
+            max-width: 900px;
+            margin: 20px auto;
+            text-align: justify;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            max-width: 900px;
+            margin: 20px auto;
+            text-align: left;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: var(--cor-principal);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
+
+        /* Estilo para as galerias */
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1100px;
+            margin: 40px auto;
+            justify-items: center;
+        }
+
+        .gallery-item {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s;
+            width: 100%;
+            max-width: 350px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Estilo para a seção de serviços (botões discretos) */
+        #servicos .gallery-item h4 {
+            color: var(--cor-clara);
+            font-size: 1.1em;
+            margin: 10px auto;
+            text-align: center;
+            background: var(--cor-principal);
+            padding: 10px 15px;
+            border-radius: 6px;
+            width: 80%;
+            box-sizing: border-box;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        #servicos .gallery-item h4:hover {
+            background-color: #1e4a62;
+        }
+
+        #servicos .gallery-item p {
+            margin-top: 15px;
+            text-align: center;
+            max-width: 100%;
+            font-size: 0.95em;
+            color: #555;
+        }
+
+        /* Estilo para a galeria de Áreas de Atuação (com imagens grandes e textos) */
+        #atuacao .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        #atuacao .gallery-item h4 {
+            margin-top: 10px;
+            color: var(--cor-principal);
+            font-size: 1.1em;
+            text-align: center;
+        }
+
+        #atuacao .gallery-item p {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #555;
+        }
+
+        /* Estilos da Seção de Contato com Ícones */
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-icons a {
+            color: var(--cor-principal);
+            font-size: 24px;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .contact-icons a:hover {
+            color: var(--cor-destaque);
+        }
+
+        /* Estilos do Novo Botão e Menu Flutuantes */
+        .float-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column-reverse;
+            align-items: flex-end;
+        }
+
+        .float-button {
+            background: #25d366;
+            color: #fff;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            transition: background 0.3s;
+        }
+
+        .float-button:hover {
+            background: #1ebd5a;
+        }
+
+        .menu-popup {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            width: 250px;
+            display: none;
+            flex-direction: column;
+            margin-bottom: 15px;
+        }
+
+        .menu-popup h4 {
+            margin: 0 0 10px 0;
+            color: #333;
+            text-align: center;
+        }
+
+        .menu-popup a {
+            display: block;
+            background: #25d366;
+            color: #fff;
+            padding: 12px 15px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-top: 10px;
+            font-weight: bold;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .menu-popup a:hover {
+            background: #1ebd5a;
+        }
+
+        /* Estilo para o ícone "Comprar na Amazon" */
+        .amazon-icon {
+            font-size: 20px;
+            margin-left: 5px;
+        }
+
+        /* Estilos para a seção de Prospecção de Áreas Estratégicas */
+        #prospeccao {
+            text-align: left;
+        }
+
+        #prospeccao h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        #prospeccao h3 {
+            color: var(--cor-principal);
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        #prospeccao ul {
+            list-style: disc;
+            padding-left: 20px;
+        }
+
+        #prospeccao .porque-escolher {
+            margin-top: 30px;
+            font-weight: bold;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .barra-lateral {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+
+            .conteudo-principal {
+                margin-left: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <nav>
-    <a href="#sobre">Sobre</a>
-    <a href="#pericia">Perícia</a>
-    <a href="#livro">Livro</a>
-    <a href="#contato">Contato</a>
-  </nav>
-
-  <header>
-    <div>
-      <h1>Andréia Maria Bráz</h1>
-      <p>Imóveis de Alto Padrão | Perícia Avaliadora Judicial | Escritora</p>
+    <div class="barra-lateral">
+        <img src="1.png" alt="Logo Andréia Maria Bráz">
+        <h1>Andréia Maria Bráz</h1>
+        <p>Avaliadora de Imóveis | Perita Judicial</p>
+        <p>CRECI-SC 64512 F | CNAI 53914</p>
+        <nav>
+            <a href="#inicio">Início</a>
+            <a href="imoveis.html">Imóveis</a>
+            <a href="#sobre">Sobre Mim</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#atuacao">Áreas de Atuação</a>
+            <a href="#prospeccao">Prospecção de Áreas</a>
+            <a href="#contato">Contato</a>
+        </nav>
+        <div style="margin-top: 30px;">
+            <p>📞 (48) 98866-6778</p>
+            <p>✉ andreiabraz.periciaimobiliaria@gmail.com</p>
+            <p>🌐 <a href="https://andreiabraz-imoveisepericia.github.io/andreia.pericia" target="_blank" style="color: white; text-decoration: none;">andreiabraz.pericia.site</a></p>
+        </div>
     </div>
-  </header>
 
-  <section id="sobre">
-    <h2>Sobre Mim</h2>
-    <div class="content">
-      <p>Atuo no mercado imobiliário com foco em imóveis de alto padrão e lançamentos em Florianópolis, além de trabalhar como Perita Avaliadora Judicial em Santa Catarina. Minha trajetória é marcada pelo compromisso, confiança e excelência.</p>
+    <div class="conteudo-principal">
+
+        <section id="inicio">
+            <h2>Bem-vindo!</h2>
+            <p>Especialista em imóveis de alto padrão, áreas para loteamentos e perícia imobiliária judicial.</p>
+        </section>
+
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <p>
+                Sou <strong>Andréia Maria Bráz</strong>, especialista em imóveis de alto padrão, áreas para loteamentos e perícia imobiliária judicial em Santa Catarina.
+                Atuo como <strong>Perita Avaliadora Judicial</strong>, elaborando laudos técnicos para processos judiciais e extrajudiciais, sempre de forma precisa, imparcial
+                e fundamentada nas normas da <strong>ABNT</strong> e metodologias reconhecidas nacionalmente.
+            </p>
+            <p>
+                Minha experiência abrange a avaliação de imóveis residenciais, comerciais, áreas urbanas e rurais, além de terrenos estratégicos para empreendimentos e expansão empresarial.
+                Já atuei em imobiliárias de referência como <strong>Gralha Imóveis</strong> e <strong>Supervisão Imóveis</strong>, consolidando expertise em negociações de alto padrão e em estudos de viabilidade de áreas.
+            </p>
+            <p>
+                Possuo <strong>CRECI PF e PJ</strong>, <strong>CNAI</strong>, certificações pelo <strong>IBREP</strong> e <strong>COFECI</strong>, além de atuação prática com perícias em diferentes comarcas de Santa Catarina e Paraná.
+                Essa trajetória me permite oferecer um trabalho sólido, confiável e ético, sempre com foco em resultados e segurança para clientes e parceiros.
+            </p>
+        </section>
+        
+        <section id="servicos">
+            <h2>Serviços de Avaliação e Consultoria</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <h4>Compra e Venda</h4>
+                    <p>Definição justa de valor de mercado para negociações, garantindo segurança para ambas as partes.</p>
+                </div>
+                <div class="gallery-item">
+                    <h4>Processos Judiciais</h4>
+                    <p>Laudos para inventários, usucapião, divórcios, dissoluções societárias e outros litígios.</p>
+                </div>
+                <div class="gallery-item">
+                    <h4>Financiamentos</h4>
+                    <p>Avaliações para garantias bancárias e crédito imobiliário, atendendo aos requisitos das instituições.</p>
+                </div>
+                <div class="gallery-item">
+                    <h4>Negócios Estratégicos</h4>
+                    <p>Assessoria em negociações complexas, built to suit, permutas e estruturação de projetos.</p>
+                </div>
+            </div>
+            <p>Uma avaliação bem elaborada dá segurança jurídica, evita conflitos e garante negociações mais justas e transparentes.</p>
+        </section>
+
+        <section id="atuacao">
+            <h2>Áreas de Atuação</h2>
+            <p>Confira algumas das áreas de atuação e especialidades dos serviços de avaliação e consultoria que oferecemos:</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="loteamento.png" alt="Imagem de loteamento">
+                    <h4>Loteamento Residencial</h4>
+                    <p>Áreas para novos bairros planejados, com viabilidade e estudos técnicos.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="predios.png" alt="Imagem de prédios">
+                    <h4>Empreendimento Vertical</h4>
+                    <p>Edifícios residenciais e mistos em regiões estratégicas e consolidadas.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="centro de distribuicao.png" alt="Imagem de centro de distribuição">
+                    <h4>Centro de Distribuição</h4>
+                    <p>Áreas para logística e expansão empresarial, com acesso e zoneamento adequados.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="reuniao de negocios.png" alt="Imagem de reunião de negócios">
+                    <h4>Reunião de Negócios</h4>
+                    <p>Atendimento consultivo com discrição e foco no objetivo do cliente.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="prospeccao">
+            <h2>Prospecção de Áreas Estratégicas</h2>
+            <p>Além da atuação pericial, ofereço assessoria para identificação e análise de áreas e glebas destinadas a diferentes finalidades, com rigor técnico, total sigilo (termo de confidencialidade) e respaldo documental.</p>
+        
+            <h3>Para quem é</h3>
+            <ul>
+                <li>Construtoras, incorporadoras e fundos de investimento</li>
+                <li>Empresas em expansão (logística/industrial) e centros de distribuição</li>
+                <li>Pessoas físicas com alta complexidade patrimonial</li>
+            </ul>
+        
+            <h3>Serviços incluídos</h3>
+            <ul>
+                <li>Identificação de áreas para loteamentos, condomínios horizontais, empreendimentos mistos e verticais</li>
+                <li>Localização de glebas para expansão empresarial, centros logísticos e industriais</li>
+                <li>Análise técnica com entrega de arquivos em KMZ (georreferenciamento)</li>
+                <li>Elaboração de carta de apresentação e dossiê técnico do imóvel</li>
+                <li>Modelagens de pagamento</li>
+                <li>Built to Suit (construção sob medida)</li>
+                <li>Permuta física ou financeira</li>
+                <li>Aportes e estruturação de parcerias</li>
+                <li>Estruturação financeira personalizada</li>
+            </ul>
+        
+            <p class="resultado">**Resultado:** segurança, discrição e credibilidade em todas as etapas da negociação.</p>
+        
+            <h3>Por que me escolher?</h3>
+            <ul>
+                <li>✔ Experiência em perícia judicial e avaliações</li>
+                <li>✔ Atuação em diversas cidades de SC</li>
+                <li>✔ Registro no CRECI e CNAI</li>
+                <li>✔ Atendimento profissional com sigilo e transparência</li>
+            </ul>
+        </section>
+
+        <section id="livro">
+            <h2>Meu Livro</h2>
+            <img src="livro_capa_paginas.png" alt="Capa do livro" style="max-width: 250px; display: block; margin: 0 auto 20px;">
+            <p>Conheça meu livro "A Leveza da Transformação", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
+            <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" style="display: block; text-align: center;">Comprar na Amazon <i class="fa-solid fa-hand-point-right amazon-icon"></i></a>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <div class="contact-icons">
+                <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/andr%C3%A9ia-br%C3%A1z-9b809b6a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="https://wa.me/5548988666778?text=Olá, gostaria de entrar em contato." target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados</p>
+        </footer>
+
     </div>
-  </section>
 
-  <section id="pericia">
-    <h2>Perícia Imobiliária</h2>
-    <div class="content">
-      <p>Sou Perita Avaliadora Judicial habilitada pelo COFECI, inscrita no TJ-SC e AJG-SC, com experiência em elaboração de laudos técnicos, pareceres e avaliações de imóveis residenciais, comerciais e áreas urbanas.</p>
+    <div class="float-container">
+        <div class="menu-popup" id="whatsappMenu">
+            <h4>Fale comigo no WhatsApp</h4>
+            <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em avaliação de imóvel." target="_blank">Avaliação de imóvel</a>
+            <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em compra de imóveis." target="_blank">Compra de Imóvel</a>
+            <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em vender meu imóvel." target="_blank">Vender Meu Imóvel</a>
+            <a href="https://wa.me/5548988666778?text=Olá, tenho interesse em perícia judicial." target="_blank">Perícia Judicial</a>
+            <a href="https://wa.me/5548988666778?text=Olá, gostaria de informações sobre o livro." target="_blank">Informações sobre o livro</a>
+            <a href="https://wa.me/5548988666778?text=Olá, tenho outro assunto." target="_blank">Outro assunto</a>
+        </div>
+        <div class="float-button" onclick="toggleMenu()">
+            <i class="fa-solid fa-comments"></i>
+        </div>
     </div>
-  </section>
 
-  <section id="livro">
-    <h2>Meu Livro</h2>
-    <div class="content">
-      <p>Sou autora do livro <strong>"A Leveza da Transformação"</strong>, uma obra que nasceu do coração e traz reflexões sobre espiritualidade, superação e os caminhos da vida. Um convite à inspiração e ao autoconhecimento.</p>
-    </div>
-  </section>
-
-  <section id="contato">
-    <h2>Contato</h2>
-    <div class="content">
-      <p><i class="fa-solid fa-envelope"></i> andreiabraz.periciaimobiliaria@gmail.com</p>
-      <p><i class="fa-solid fa-phone"></i> (48) 98866-6778</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Andréia Maria Bráz | Todos os direitos reservados</p>
-    <div>
-      <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-      <a href="#"><i class="fa-brands fa-instagram"></i></a>
-    </div>
-  </footer>
-
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('whatsappMenu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+    </script>
 </body>
 </html>
-
-
-  
