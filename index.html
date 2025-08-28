@@ -9,8 +9,8 @@
     
     <style>
         :root {
-            --cor-principal: #2c445c; /* Azul escuro do modelo */
-            --cor-destaque: #d4af37; /* Dourado */
+            --cor-principal: #2c445c;
+            --cor-destaque: #d4af37;
             --cor-fundo: #f4f6f9;
             --cor-texto: #333;
             --cor-clara: #fff;
@@ -24,7 +24,6 @@
             scroll-behavior: smooth;
         }
 
-        /* Seção do topo com imagem de fundo flutuante (paralaxe) */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagens/1.jpg') no-repeat center center;
             background-size: cover;
@@ -53,7 +52,6 @@
             max-width: 600px;
         }
 
-        /* Menu de navegação no topo */
         .top-nav {
             position: fixed;
             top: 0;
@@ -68,12 +66,6 @@
             z-index: 10;
         }
 
-        .top-nav .logo img {
-            max-width: 150px;
-            height: auto;
-            display: none;
-        }
-        
         .top-nav nav a {
             color: var(--cor-clara);
             text-decoration: none;
@@ -86,7 +78,6 @@
             color: var(--cor-destaque);
         }
 
-        /* Estilos do conteúdo */
         section {
             padding: 60px 40px;
             text-align: left;
@@ -292,6 +283,79 @@
             font-size: 20px;
             margin-left: 5px;
         }
+        
+        /* Novos estilos para a seção do livro */
+        .livro-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .livro-container img {
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .livro-container img:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+        }
+        
+        .livro-info p {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--cor-principal);
+            color: var(--cor-clara);
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+        }
+
+        .cta-button:hover {
+            background-color: #1e4a62;
+            transform: scale(1.05);
+        }
+
+        .cta-button i {
+            margin-left: 10px;
+        }
+
+        @media (min-width: 768px) {
+            .livro-container {
+                flex-direction: row;
+                text-align: left;
+            }
+            
+            .livro-container img {
+                max-width: 200px;
+            }
+            
+            .livro-info {
+                text-align: left;
+            }
+
+            .livro-info p {
+                text-align: left;
+            }
+            
+            .cta-button {
+                display: inline-block;
+            }
+        }
+
 
         #prospeccao {
             text-align: left;
@@ -357,16 +421,16 @@
     <section id="sobre">
         <h2>Sobre Mim</h2>
         <p>
-            Sou **Andréia Maria Bráz**, especialista em imóveis de alto padrão, áreas para loteamentos e perícia imobiliária judicial em Santa Catarina.
-            Atuo como **Perita Avaliadora Judicial**, elaborando laudos técnicos para processos judiciais e extrajudiciais, sempre de forma precisa, imparcial
-            e fundamentada nas normas da **ABNT** e metodologias reconhecidas nacionalmente.
+            Sou <strong>Andréia Maria Bráz</strong>, especialista em imóveis de alto padrão, áreas para loteamentos e perícia imobiliária judicial em Santa Catarina.
+            Atuo como <strong>Perita Avaliadora Judicial</strong>, elaborando laudos técnicos para processos judiciais e extrajudiciais, sempre de forma precisa, imparcial
+            e fundamentada nas normas da <strong>ABNT</strong> e metodologias reconhecidas nacionalmente.
         </p>
         <p>
             Minha experiência abrange a avaliação de imóveis residenciais, comerciais, áreas urbanas e rurais, além de terrenos estratégicos para empreendimentos e expansão empresarial.
-            Já atuei em imobiliárias de referência como **Gralha Imóveis** e **Supervisão Imóveis**, consolidando expertise em negociações de alto padrão e em estudos de viabilidade de áreas.
+            Já atuei em imobiliárias de referência como <strong>Gralha Imóveis</strong> e <strong>Supervisão Imóveis</strong>, consolidando expertise em negociações de alto padrão e em estudos de viabilidade de áreas.
         </p>
         <p>
-            Possuo **CRECI PF e PJ**, **CNAI**, certificações pelo **IBREP** e **COFECI**, além de atuação prática com perícias em diferentes comarcas de Santa Catarina e Paraná.
+            Possuo <strong>CRECI PF e PJ</strong>, <strong>CNAI</strong>, certificações pelo <strong>IBREP</strong> e <strong>COFECI</strong>, além de atuação prática com perícias em diferentes comarcas de Santa Catarina e Paraná.
             Essa trajetória me permite oferecer um trabalho sólido, confiável e ético, sempre com foco em resultados e segurança para clientes e parceiros.
         </p>
     </section>
@@ -458,9 +522,15 @@
 
     <section id="livro">
         <h2>Meu Livro</h2>
-        <img src="imagens/livro_capa_paginas.png" alt="Capa do livro" style="max-width: 250px; display: block; margin: 0 auto 20px;">
-        <p>Conheça meu livro "A Leveza da Transformação", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
-        <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" style="display: block; text-align: center;">Comprar na Amazon <i class="fa-solid fa-hand-point-right amazon-icon"></i></a>
+        <div class="livro-container">
+            <img src="imagens/livro_capa_paginas.png" alt="Capa do livro A Leveza da Transformação">
+            <div class="livro-info">
+                <p>Conheça meu livro "A Leveza da Transformação", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
+                <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" class="cta-button">
+                    Comprar na Amazon <i class="fa-solid fa-hand-point-right"></i>
+                </a>
+            </div>
+        </div>
     </section>
 
     <section id="contato">
@@ -474,7 +544,8 @@
     </section>
 
     <footer>
-                <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados</p>
+        
+        <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados</p>
     </footer>
 
     <div class="float-container">
