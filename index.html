@@ -6,7 +6,7 @@
     <title>Andréia Maria Bráz - Imóveis e Perícia Imobiliária</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    
     <style>
         :root {
             --cor-principal: #2c445c; /* Azul escuro do modelo */
@@ -22,117 +22,91 @@
             background: var(--cor-fundo);
             color: var(--cor-texto);
             scroll-behavior: smooth;
-            display: flex; /* Cria o layout de duas colunas */
         }
-        
-        /* Estilo da barra lateral fixa */
-        .barra-lateral {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 300px;
+
+        /* Seção do topo com imagem de fundo flutuante */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagens/1.jpg') no-repeat center center/cover;
             height: 100vh;
-            background: var(--cor-principal);
             color: var(--cor-clara);
-            padding: 20px;
-            box-sizing: border-box;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
             text-align: center;
-            overflow-y: auto;
+            position: relative;
+            z-index: 1;
+            padding: 20px;
         }
 
-        .barra-lateral img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 20px;
-            border-radius: 8px; /* Opcional: para suavizar as bordas */
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
         }
         
-        .barra-lateral h1 {
-            color: var(--cor-clara);
+        .hero p {
+            font-size: 1.2em;
             margin: 0;
-            font-size: 1.8em;
+            max-width: 600px;
         }
 
-        .barra-lateral p {
-            font-size: 0.9em;
-            color: #ccc;
-            margin-top: 5px;
-        }
-
-        .barra-lateral nav {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
+        /* Menu de navegação no topo */
+        .top-nav {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
-            margin-top: 30px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-sizing: border-box;
         }
 
-        .barra-lateral nav a {
-            background: transparent;
+        .top-nav .logo img {
+            max-width: 150px; /* Reduz o tamanho da logo no menu */
+            height: auto;
+            display: none; /* A logo flutuante não vai aparecer nesse design */
+        }
+        
+        .top-nav nav a {
             color: var(--cor-clara);
-            padding: 10px 18px;
-            border-radius: 6px;
             text-decoration: none;
             font-weight: bold;
-            transition: all 0.3s;
-            border: 1px solid var(--cor-destaque);
-        }
-
-        .barra-lateral nav a:hover {
-            background: var(--cor-destaque);
-            color: var(--cor-principal);
-        }
-
-        .conteudo-principal {
-            margin-left: 300px; /* Desloca o conteúdo principal para a direita */
-            width: 100%;
-            padding: 0;
+            margin-left: 20px;
+            transition: color 0.3s;
         }
         
-        header {
-            background: var(--cor-principal);
-            color: var(--cor-clara);
-            padding: 20px;
-            text-align: center;
-            display: none; /* O header original será ocultado */
+        .top-nav nav a:hover {
+            color: var(--cor-destaque);
         }
 
+        /* Estilos do conteúdo */
         section {
             padding: 60px 40px;
             text-align: left;
         }
 
-        section#inicio, footer {
+        h2, h3 {
+            color: var(--cor-principal);
+            margin-bottom: 20px;
             text-align: center;
         }
-
+        
+        section p, section ul {
+            max-width: 900px;
+            margin: 20px auto;
+            text-align: justify;
+        }
+        
+        /* O resto dos estilos de galeria, rodapé e botões de contato permanecem os mesmos */
         section:nth-child(even) {
             background: #fff;
         }
 
         section:nth-child(odd) {
             background: var(--cor-fundo);
-        }
-
-        h2 {
-            color: var(--cor-principal);
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        h3 {
-            color: var(--cor-principal);
-            text-align: left;
-            margin-top: 2rem;
-        }
-
-        section p {
-            max-width: 900px;
-            margin: 20px auto;
-            text-align: justify;
         }
 
         ul {
@@ -155,7 +129,6 @@
             margin-top: 40px;
         }
 
-        /* Estilo para as galerias */
         .gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -184,7 +157,6 @@
             transform: translateY(-5px);
         }
 
-        /* Estilo para a seção de serviços (botões discretos) */
         #servicos .gallery-item h4 {
             color: var(--cor-clara);
             font-size: 1.1em;
@@ -211,7 +183,6 @@
             color: #555;
         }
 
-        /* Estilo para a galeria de Áreas de Atuação (com imagens grandes e textos) */
         #atuacao .gallery-item img {
             max-width: 100%;
             height: auto;
@@ -233,7 +204,6 @@
             color: #555;
         }
 
-        /* Estilos da Seção de Contato com Ícones */
         .contact-icons {
             display: flex;
             justify-content: center;
@@ -252,7 +222,6 @@
             color: var(--cor-destaque);
         }
 
-        /* Estilos do Novo Botão e Menu Flutuantes */
         .float-container {
             position: fixed;
             bottom: 20px;
@@ -316,13 +285,11 @@
             background: #1ebd5a;
         }
 
-        /* Estilo para o ícone "Comprar na Amazon" */
         .amazon-icon {
             font-size: 20px;
             margin-left: 5px;
         }
 
-        /* Estilos para a seção de Prospecção de Áreas Estratégicas */
         #prospeccao {
             text-align: left;
         }
@@ -348,31 +315,28 @@
             font-weight: bold;
         }
 
-        /* Responsividade */
         @media (max-width: 768px) {
-            body {
+            .top-nav {
                 flex-direction: column;
+                align-items: flex-start;
             }
-
-            .barra-lateral {
-                position: relative;
+            .top-nav nav {
+                margin-top: 15px;
                 width: 100%;
-                height: auto;
+                text-align: center;
             }
-
-            .conteudo-principal {
-                margin-left: 0;
+            .top-nav nav a {
+                margin: 0 10px;
             }
         }
     </style>
 </head>
 <body>
 
-    <div class="barra-lateral">
-        <img src="imagens/1.jpg" alt="Logo Andréia Maria Bráz">
-        <h1>Andréia Maria Bráz</h1>
-        <p>Avaliadora de Imóveis | Perita Judicial</p>
-        <p>CRECI-SC 64512 F | CNAI 53914</p>
+    <div class="top-nav">
+        <div class="logo">
+            <a href="#inicio"><img src="imagens/1.jpg" alt="Logo Andréia Maria Bráz"></a>
+        </div>
         <nav>
             <a href="#inicio">Início</a>
             <a href="imoveis.html">Imóveis</a>
@@ -382,144 +346,137 @@
             <a href="#prospeccao">Prospecção de Áreas</a>
             <a href="#contato">Contato</a>
         </nav>
-        <div style="margin-top: 30px;">
-            <p>📞 (48) 98866-6778</p>
-            <p>✉ andreiabraz.periciaimobiliaria@gmail.com</p>
-            <p>🌐 <a href="https://andreiabraz-imoveisepericia.github.io/andreia.pericia" target="_blank" style="color: white; text-decoration: none;">andreiabraz.pericia.site</a></p>
+    </div>
+
+    <header class="hero" id="inicio">
+        <h1>Andréia Maria Bráz</h1>
+        <p>Avaliadora de Imóveis | Perita Judicial | CRECI-SC 64512 F | CNAI 53914</p>
+    </header>
+
+    <section id="sobre">
+        <h2>Sobre Mim</h2>
+        <p>
+            Sou <strong>Andréia Maria Bráz</strong>, especialista em imóveis de alto padrão, áreas para loteamentos e perícia imobiliária judicial em Santa Catarina.
+            Atuo como <strong>Perita Avaliadora Judicial</strong>, elaborando laudos técnicos para processos judiciais e extrajudiciais, sempre de forma precisa, imparcial
+            e fundamentada nas normas da <strong>ABNT</strong> e metodologias reconhecidas nacionalmente.
+        </p>
+        <p>
+            Minha experiência abrange a avaliação de imóveis residenciais, comerciais, áreas urbanas e rurais, além de terrenos estratégicos para empreendimentos e expansão empresarial.
+            Já atuei em imobiliárias de referência como <strong>Gralha Imóveis</strong> e <strong>Supervisão Imóveis</strong>, consolidando expertise em negociações de alto padrão e em estudos de viabilidade de áreas.
+        </p>
+        <p>
+            Possuo <strong>CRECI PF e PJ</strong>, <strong>CNAI</strong>, certificações pelo <strong>IBREP</strong> e <strong>COFECI</strong>, além de atuação prática com perícias em diferentes comarcas de Santa Catarina e Paraná.
+            Essa trajetória me permite oferecer um trabalho sólido, confiável e ético, sempre com foco em resultados e segurança para clientes e parceiros.
+        </p>
+    </section>
+    
+    <section id="servicos">
+        <h2>Serviços de Avaliação e Consultoria</h2>
+        <div class="gallery">
+            <div class="gallery-item">
+                <h4>Compra e Venda</h4>
+                <p>Definição justa de valor de mercado para negociações, garantindo segurança para ambas as partes.</p>
+            </div>
+            <div class="gallery-item">
+                <h4>Processos Judiciais</h4>
+                <p>Laudos para inventários, usucapião, divórcios, dissoluções societárias e outros litígios.</p>
+            </div>
+            <div class="gallery-item">
+                <h4>Financiamentos</h4>
+                <p>Avaliações para garantias bancárias e crédito imobiliário, atendendo aos requisitos das instituições.</p>
+            </div>
+            <div class="gallery-item">
+                <h4>Negócios Estratégicos</h4>
+                <p>Assessoria em negociações complexas, built to suit, permutas e estruturação de projetos.</p>
+            </div>
         </div>
-    </div>
+        <p>Uma avaliação bem elaborada dá segurança jurídica, evita conflitos e garante negociações mais justas e transparentes.</p>
+    </section>
 
-    <div class="conteudo-principal">
-
-        <section id="inicio">
-            <h2>Bem-vindo!</h2>
-            <p>Especialista em imóveis de alto padrão, áreas para loteamentos e perícia imobiliária judicial.</p>
-        </section>
-
-        <section id="sobre">
-            <h2>Sobre Mim</h2>
-            <p>
-                Sou <strong>Andréia Maria Bráz</strong>, especialista em imóveis de alto padrão, áreas para loteamentos e perícia imobiliária judicial em Santa Catarina.
-                Atuo como <strong>Perita Avaliadora Judicial</strong>, elaborando laudos técnicos para processos judiciais e extrajudiciais, sempre de forma precisa, imparcial
-                e fundamentada nas normas da <strong>ABNT</strong> e metodologias reconhecidas nacionalmente.
-            </p>
-            <p>
-                Minha experiência abrange a avaliação de imóveis residenciais, comerciais, áreas urbanas e rurais, além de terrenos estratégicos para empreendimentos e expansão empresarial.
-                Já atuei em imobiliárias de referência como <strong>Gralha Imóveis</strong> e <strong>Supervisão Imóveis</strong>, consolidando expertise em negociações de alto padrão e em estudos de viabilidade de áreas.
-            </p>
-            <p>
-                Possuo <strong>CRECI PF e PJ</strong>, <strong>CNAI</strong>, certificações pelo <strong>IBREP</strong> e <strong>COFECI</strong>, além de atuação prática com perícias em diferentes comarcas de Santa Catarina e Paraná.
-                Essa trajetória me permite oferecer um trabalho sólido, confiável e ético, sempre com foco em resultados e segurança para clientes e parceiros.
-            </p>
-        </section>
-        
-        <section id="servicos">
-            <h2>Serviços de Avaliação e Consultoria</h2>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <h4>Compra e Venda</h4>
-                    <p>Definição justa de valor de mercado para negociações, garantindo segurança para ambas as partes.</p>
-                </div>
-                <div class="gallery-item">
-                    <h4>Processos Judiciais</h4>
-                    <p>Laudos para inventários, usucapião, divórcios, dissoluções societárias e outros litígios.</p>
-                </div>
-                <div class="gallery-item">
-                    <h4>Financiamentos</h4>
-                    <p>Avaliações para garantias bancárias e crédito imobiliário, atendendo aos requisitos das instituições.</p>
-                </div>
-                <div class="gallery-item">
-                    <h4>Negócios Estratégicos</h4>
-                    <p>Assessoria em negociações complexas, built to suit, permutas e estruturação de projetos.</p>
-                </div>
+    <section id="atuacao">
+        <h2>Áreas de Atuação</h2>
+        <p>Confira algumas das áreas de atuação e especialidades dos serviços de avaliação e consultoria que oferecemos:</p>
+        <div class="gallery">
+            <div class="gallery-item">
+                <img src="imagens/loteamento.png" alt="Imagem de loteamento">
+                <h4>Loteamento Residencial</h4>
+                <p>Áreas para novos bairros planejados, com viabilidade e estudos técnicos.</p>
             </div>
-            <p>Uma avaliação bem elaborada dá segurança jurídica, evita conflitos e garante negociações mais justas e transparentes.</p>
-        </section>
-
-        <section id="atuacao">
-            <h2>Áreas de Atuação</h2>
-            <p>Confira algumas das áreas de atuação e especialidades dos serviços de avaliação e consultoria que oferecemos:</p>
-            <div class="gallery">
-                <div class="gallery-item">
-                    <img src="imagens/loteamento.png" alt="Imagem de loteamento">
-                    <h4>Loteamento Residencial</h4>
-                    <p>Áreas para novos bairros planejados, com viabilidade e estudos técnicos.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="imagens/predios.png" alt="Imagem de prédios">
-                    <h4>Empreendimento Vertical</h4>
-                    <p>Edifícios residenciais e mistos em regiões estratégicas e consolidadas.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="imagens/centro de distribuicao.png" alt="Imagem de centro de distribuição">
-                    <h4>Centro de Distribuição</h4>
-                    <p>Áreas para logística e expansão empresarial, com acesso e zoneamento adequados.</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="imagens/reuniao de negocios.png" alt="Imagem de reunião de negócios">
-                    <h4>Reunião de Negócios</h4>
-                    <p>Atendimento consultivo com discrição e foco no objetivo do cliente.</p>
-                </div>
+            <div class="gallery-item">
+                <img src="imagens/predios.png" alt="Imagem de prédios">
+                <h4>Empreendimento Vertical</h4>
+                <p>Edifícios residenciais e mistos em regiões estratégicas e consolidadas.</p>
             </div>
-        </section>
-
-        <section id="prospeccao">
-            <h2>Prospecção de Áreas Estratégicas</h2>
-            <p>Além da atuação pericial, ofereço assessoria para identificação e análise de áreas e glebas destinadas a diferentes finalidades, com rigor técnico, total sigilo (termo de confidencialidade) e respaldo documental.</p>
-        
-            <h3>Para quem é</h3>
-            <ul>
-                <li>Construtoras, incorporadoras e fundos de investimento</li>
-                <li>Empresas em expansão (logística/industrial) e centros de distribuição</li>
-                <li>Pessoas físicas com alta complexidade patrimonial</li>
-            </ul>
-        
-            <h3>Serviços incluídos</h3>
-            <ul>
-                <li>Identificação de áreas para loteamentos, condomínios horizontais, empreendimentos mistos e verticais</li>
-                <li>Localização de glebas para expansão empresarial, centros logísticos e industriais</li>
-                <li>Análise técnica com entrega de arquivos em KMZ (georreferenciamento)</li>
-                <li>Elaboração de carta de apresentação e dossiê técnico do imóvel</li>
-                <li>Modelagens de pagamento</li>
-                <li>Built to Suit (construção sob medida)</li>
-                <li>Permuta física ou financeira</li>
-                <li>Aportes e estruturação de parcerias</li>
-                <li>Estruturação financeira personalizada</li>
-            </ul>
-        
-            <p class="resultado">**Resultado:** segurança, discrição e credibilidade em todas as etapas da negociação.</p>
-        
-            <h3>Por que me escolher?</h3>
-            <ul>
-                <li>✔ Experiência em perícia judicial e avaliações</li>
-                <li>✔ Atuação em diversas cidades de SC</li>
-                <li>✔ Registro no CRECI e CNAI</li>
-                <li>✔ Atendimento profissional com sigilo e transparência</li>
-            </ul>
-        </section>
-
-        <section id="livro">
-            <h2>Meu Livro</h2>
-            <img src="imagens/livro_capa_paginas.png" alt="Capa do livro" style="max-width: 250px; display: block; margin: 0 auto 20px;">
-            <p>Conheça meu livro "A Leveza da Transformação", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
-            <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" style="display: block; text-align: center;">Comprar na Amazon <i class="fa-solid fa-hand-point-right amazon-icon"></i></a>
-        </section>
-
-        <section id="contato">
-            <h2>Contato</h2>
-            <div class="contact-icons">
-                <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/andr%C3%A9ia-br%C3%A1z-9b809b6a/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com"><i class="fas fa-envelope"></i></a>
-                <a href="https://wa.me/5548988666778?text=Olá, gostaria de entrar em contato." target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <div class="gallery-item">
+                <img src="imagens/centro de distribuicao.png" alt="Imagem de centro de distribuição">
+                <h4>Centro de Distribuição</h4>
+                <p>Áreas para logística e expansão empresarial, com acesso e zoneamento adequados.</p>
             </div>
-        </section>
+            <div class="gallery-item">
+                <img src="imagens/reuniao de negocios.png" alt="Imagem de reunião de negócios">
+                <h4>Reunião de Negócios</h4>
+                <p>Atendimento consultivo com discrição e foco no objetivo do cliente.</p>
+            </div>
+        </div>
+    </section>
 
-        <footer>
-            <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados</p>
-        </footer>
+    <section id="prospeccao">
+        <h2>Prospecção de Áreas Estratégicas</h2>
+        <p>Além da atuação pericial, ofereço assessoria para identificação e análise de áreas e glebas destinadas a diferentes finalidades, com rigor técnico, total sigilo (termo de confidencialidade) e respaldo documental.</p>
+    
+        <h3>Para quem é</h3>
+        <ul>
+            <li>Construtoras, incorporadoras e fundos de investimento</li>
+            <li>Empresas em expansão (logística/industrial) e centros de distribuição</li>
+            <li>Pessoas físicas com alta complexidade patrimonial</li>
+        </ul>
+    
+        <h3>Serviços incluídos</h3>
+        <ul>
+            <li>Identificação de áreas para loteamentos, condomínios horizontais, empreendimentos mistos e verticais</li>
+            <li>Localização de glebas para expansão empresarial, centros logísticos e industriais</li>
+            <li>Análise técnica com entrega de arquivos em KMZ (georreferenciamento)</li>
+            <li>Elaboração de carta de apresentação e dossiê técnico do imóvel</li>
+            <li>Modelagens de pagamento</li>
+            <li>Built to Suit (construção sob medida)</li>
+            <li>Permuta física ou financeira</li>
+            <li>Aportes e estruturação de parcerias</li>
+            <li>Estruturação financeira personalizada</li>
+        </ul>
+    
+        <p class="resultado">**Resultado:** segurança, discrição e credibilidade em todas as etapas da negociação.</p>
+    
+        <h3>Por que me escolher?</h3>
+        <ul>
+            <li>✔ Experiência em perícia judicial e avaliações</li>
+            <li>✔ Atuação em diversas cidades de SC</li>
+            <li>✔ Registro no CRECI e CNAI</li>
+            <li>✔ Atendimento profissional com sigilo e transparência</li>
+        </ul>
+    </section>
 
-    </div>
+    <section id="livro">
+        <h2>Meu Livro</h2>
+        <img src="imagens/livro_capa_paginas.png" alt="Capa do livro" style="max-width: 250px; display: block; margin: 0 auto 20px;">
+        <p>Conheça meu livro "A Leveza da Transformação", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
+        <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" style="display: block; text-align: center;">Comprar na Amazon <i class="fa-solid fa-hand-point-right amazon-icon"></i></a>
+    </section>
+
+    <section id="contato">
+        <h2>Contato</h2>
+        <div class="contact-icons">
+            <a href="https://www.instagram.com/andreiabrazpericiaimobiliaria/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/andr%C3%A9ia-br%C3%A1z-9b809b6a/" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:andreiabraz.periciaimobiliaria@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://wa.me/5548988666778?text=Olá, gostaria de entrar em contato." target="_blank"><i class="fab fa-whatsapp"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>📞 (48) 98866-6778</p>
+        <p>✉ andreiabraz.periciaimobiliaria@gmail.com</p>
+        <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados</p>
+    </footer>
 
     <div class="float-container">
         <div class="menu-popup" id="whatsappMenu">
