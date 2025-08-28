@@ -27,9 +27,10 @@
         /* Seção do topo com imagem de fundo flutuante (paralaxe) */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('imagens/1.jpg') no-repeat center center;
-            background-size: cover; /* Garante que a imagem cubra toda a área */
-            background-attachment: fixed; /* ESSA LINHA CRIA O EFEITO PARALAXE */
+            background-size: cover;
+            background-attachment: fixed;
             height: 100vh;
+            width: 100%;
             color: var(--cor-clara);
             display: flex;
             flex-direction: column;
@@ -54,30 +55,30 @@
 
         /* Menu de navegação no topo */
         .top-nav {
-            position: absolute;
+            position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             background: rgba(0, 0, 0, 0.6);
             padding: 15px 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
             align-items: center;
             box-sizing: border-box;
-            z-index: 10; /* Garante que o menu fique acima da imagem */
+            z-index: 10;
         }
 
         .top-nav .logo img {
-            max-width: 150px; /* Reduz o tamanho da logo no menu */
+            max-width: 150px;
             height: auto;
-            display: none; /* A logo flutuante não vai aparecer nesse design */
+            display: none;
         }
         
         .top-nav nav a {
             color: var(--cor-clara);
             text-decoration: none;
             font-weight: bold;
-            margin-left: 20px;
+            margin: 0 15px;
             transition: color 0.3s;
         }
         
@@ -103,7 +104,6 @@
             text-align: justify;
         }
         
-        /* O resto dos estilos de galeria, rodapé e botões de contato permanecem os mesmos */
         section:nth-child(even) {
             background: #fff;
         }
@@ -321,7 +321,7 @@
         @media (max-width: 768px) {
             .top-nav {
                 flex-direction: column;
-                align-items: flex-start;
+                align-items: center;
             }
             .top-nav nav {
                 margin-top: 15px;
@@ -337,8 +337,6 @@
 <body>
 
     <div class="top-nav">
-        <div class="logo">
-            </div>
         <nav>
             <a href="#inicio">Início</a>
             <a href="imoveis.html">Imóveis</a>
@@ -352,7 +350,8 @@
 
     <header class="hero" id="inicio">
         <h1>Andréia Maria Bráz</h1>
-        <p>Corretora e Avaliadora de Imóveis | Perita Judicial | CRECI-SC 64512 F e 10036 J | CNAI 53914</p>
+        <p>Corretora e Avaliadora de Imóveis | Perita Judicial</p>
+        <p>CRECI-SC 64512 F | CRECI-SC 10036J | CNAI 53914</p>
     </header>
 
     <section id="sobre">
@@ -461,7 +460,7 @@
         <h2>Meu Livro</h2>
         <img src="imagens/livro_capa_paginas.png" alt="Capa do livro" style="max-width: 250px; display: block; margin: 0 auto 20px;">
         <p>Conheça meu livro "A Leveza da Transformação", um guia completo para quem busca entender o mercado de avaliações e a atuação do perito judicial. Disponível para compra na Amazon.</p>
-        <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME&ref_=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME&social_share=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME&bestFormat=true" target="_blank" style="display: block; text-align: center;">Comprar na Amazon <i class="fa-solid fa-hand-point-right amazon-icon"></i></a>
+        <a href="https://www.amazon.com.br/dp/B0F1Q58XD4?ref=cm_sw_r_ffobk_ud_dp_EMR69DHXMSR6RCVE6DME" target="_blank" style="display: block; text-align: center;">Comprar na Amazon <i class="fa-solid fa-hand-point-right amazon-icon"></i></a>
     </section>
 
     <section id="contato">
@@ -475,7 +474,7 @@
     </section>
 
     <footer>
-              <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados</p>
+                <p>&copy; 2025 Andréia Maria Bráz - Todos os direitos reservados</p>
     </footer>
 
     <div class="float-container">
