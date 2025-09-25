@@ -67,17 +67,104 @@
   </header>
 
   <div class="aviso">
-    🔔 Esta página está em construção. As imagens abaixo são ilustrativas.
+    🔔 Esta página está em construção. LOGO TEREMOS MAIS NOVIDADES NO AR.
   </div>
 
   <h2>Conheça alguns imóveis</h2>
 
+  <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apartamento à venda - Centro de Palhoça</title>
+  <link rel="stylesheet" href="../estilo.css">
+  <style>
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 { color: #0a2a43; }
+    .galeria {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 10px;
+      margin-top: 20px;
+    }
+    .galeria img {
+      width: 100%;
+      border-radius: 8px;
+      transition: transform 0.3s;
+    }
+    .galeria img:hover {
+      transform: scale(1.05);
+    }
+    .detalhes {
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+    .preco {
+      font-size: 1.4em;
+      font-weight: bold;
+      color: #d44a37;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
   <div class="container">
-    <div class="card">
-      <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994" alt="Casa Residencial">
-      <h3>Casa Residencial</h3>
-      <p>Bela casa em bairro tranquilo, com 3 quartos, garagem e quintal amplo.</p>
-      <button>Saiba Mais</button>
+    <h1>Apartamento à venda – R$595.000,00 | Centro de Palhoça/SC</h1>
+    <p>
+      Conforto, praticidade e uma localização privilegiada no coração da cidade!  
+      Ideal para quem busca morar perto de tudo, com um imóvel funcional, aconchegante e pronto para morar.
+    </p>
+
+    <div class="galeria">
+      <img src="imagens/apartamento-centro-palhoca-1.jpeg" alt="Sala de estar - apartamento Centro Palhoça">
+      <img src="imagens/apartamento-centro-palhoca-2.jpeg" alt="Quarto - apartamento Centro Palhoça">
+      <img src="imagens/apartamento-centro-palhoca-3.jpeg" alt="Fachada do prédio">
+      <img src="imagens/apartamento-centro-palhoca-4.jpeg" alt="Dormitório casal">
+      <img src="imagens/apartamento-centro-palhoca-5.jpeg" alt="Dormitório solteiro">
+      <img src="imagens/apartamento-centro-palhoca-6.jpeg" alt="Cozinha planejada">
+      <img src="imagens/apartamento-centro-palhoca-7.jpeg" alt="Área de serviço">
+      <img src="imagens/apartamento-centro-palhoca-8.jpeg" alt="Banheiro">
+      <img src="imagens/apartamento-centro-palhoca-9.jpeg" alt="Cozinha sob medida">
+      <img src="imagens/apartamento-centro-palhoca-10.jpeg" alt="Sacada com churrasqueira">
+      <img src="imagens/apartamento-centro-palhoca-11.jpeg" alt="Cozinha completa">
+      <img src="imagens/apartamento-centro-palhoca-12.jpeg" alt="Armários planejados">
+      <img src="imagens/apartamento-centro-palhoca-13.jpeg" alt="Detalhes internos">
+    </div>
+
+    <div class="detalhes">
+      <ul>
+        <li>✅ 2 dormitórios (um com acesso à sacada privativa)</li>
+        <li>✅ 1 banheiro social</li>
+        <li>✅ Cozinha planejada</li>
+        <li>✅ Sacada com churrasqueira</li>
+        <li>✅ Armários sob medida em todos os cômodos</li>
+        <li>✅ 3 ar-condicionados instalados</li>
+        <li>✅ Mobiliado</li>
+        <li>✅ Vaga de garagem coberta</li>
+        <li>✅ Prédio com elevador</li>
+        <li>✅ Apenas 4 andares — mais privacidade e tranquilidade</li>
+      </ul>
+
+      <h3>📍 Localização estratégica:</h3>
+      <p>No Centro de Palhoça, próximo a supermercados, escolas, farmácias, bancos e com fácil acesso à BR-101.</p>
+
+      <p class="preco">💰 Valor: R$595.000,00</p>
+      <p>📄 Pode ser financiado.</p>
+
+      <p><strong>Gostou?</strong> Entre em contato para mais informações ou agendar uma visita!</p>
+    </div>
+  </div>
+</body>
+</html>
+
     </div>
 
     <div class="card">
